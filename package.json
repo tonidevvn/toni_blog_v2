@@ -1,6 +1,6 @@
 {
   "name": "toni_blog_v2",
-  "private": true,
+  "private": false,
   "homepage": "https://tonidevvn.github.io/toni_blog_v2/",
   "version": "1.2.0",
   "type": "module",
