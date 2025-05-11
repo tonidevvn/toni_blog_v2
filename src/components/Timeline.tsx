@@ -1,7 +1,9 @@
-import React from "react";
 import "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBriefcase } from "@fortawesome/free-solid-svg-icons";
+import {
+  faBriefcase,
+  faGraduationCap,
+} from "@fortawesome/free-solid-svg-icons";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
@@ -23,9 +25,9 @@ function Timeline() {
             className="vertical-timeline-element--work"
             contentStyle={{ background: "white", color: "rgb(39, 40, 34)" }}
             contentArrowStyle={{ borderRight: "7px solid  white" }}
-            date="2024 - present"
+            date="2024 - Present"
             iconStyle={{ background: "#5000ca", color: "rgb(39, 40, 34)" }}
-            icon={<FontAwesomeIcon icon={faBriefcase} />}
+            icon={<FontAwesomeIcon icon={faGraduationCap} />}
           >
             <h3 className="vertical-timeline-element-title">
               Master's degree, Applied Computing, Information Sciences at
@@ -44,7 +46,7 @@ function Timeline() {
             icon={<FontAwesomeIcon icon={faBriefcase} />}
           >
             <h3 className="vertical-timeline-element-title">
-              General Manager, Technology Consultant, Client Support at UNO
+              Technology Consultant, Full-Stack Developer, Client Support at UNO
               MEDIA
             </h3>
             <h4 className="vertical-timeline-element-subtitle">
@@ -104,7 +106,7 @@ function Timeline() {
           </VerticalTimelineElement>
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
-            date="2011 - 2020"
+            date="2011 - 2012"
             iconStyle={{ background: "#5000ca", color: "rgb(39, 40, 34)" }}
             icon={<FontAwesomeIcon icon={faBriefcase} />}
           >

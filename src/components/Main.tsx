@@ -22,7 +22,7 @@ function Main() {
   return (
     <div id="main" className="container">
       <div className="about-section">
-        <div className="image-wrapper">
+        <div className="image-wrapper animate-float ">
           <img src={Avatar} alt="Avatar" />
         </div>
         <div className="content">
@@ -67,7 +67,7 @@ function Main() {
               <div className="w-full flex justify-center md:justify-center lg:justify-start">
                 <button
                   onClick={() => scrollToSection("about")}
-                  className="transition-all duration-300 animate-float px-5 py-4 border-2 border-indigo-600 hover:bg-indigo-600 font-bold mt-12 flex items-center space-x-3 rounded"
+                  className="cursor-pointer transition-all duration-300 px-5 py-4 border-2 border-indigo-600 hover:bg-indigo-600 font-bold mt-12 flex items-center space-x-3 rounded"
                 >
                   <div>
                     <svg
@@ -98,7 +98,7 @@ function Main() {
           onClick={() => scrollToSection("main")}
           className={`${
             scrollTopVisible ? "opacity-100" : "opacity-0"
-          } border-2 border-indigo-600 bg-indigo-600 inline-flex items-center rounded-full p-3 text-white shadow-sm transition-all hover:bg-transparent duration-300`}
+          } border-2 border-indigo-600 bg-indigo-600 inline-flex items-center rounded-full p-3 text-white shadow-sm transition-all hover:bg-transparent duration-300 cursor-pointer`}
         >
           <svg
             stroke="currentColor"

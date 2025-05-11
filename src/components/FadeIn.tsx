@@ -1,9 +1,9 @@
 import React, {
-    JSXElementConstructor,
-    PropsWithChildren,
     useEffect,
     useState,
   } from "react";
+import type { PropsWithChildren } from "react";
+import type { JSXElementConstructor } from "react";
   
   interface Props {
     delay?: number;

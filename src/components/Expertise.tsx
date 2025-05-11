@@ -1,7 +1,10 @@
-import React from "react";
 import "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faReact, faDocker } from "@fortawesome/free-brands-svg-icons";
+import {
+  faReact,
+  faDocker,
+  faWindows,
+} from "@fortawesome/free-brands-svg-icons";
 import Chip from "@mui/material/Chip";
 import "../assets/styles/Expertise.scss";
 import { faCogs } from "@fortawesome/free-solid-svg-icons";
@@ -67,7 +70,7 @@ function Expertise() {
 
           <div className="skill">
             <div className="flex align-middle items-center mb-4 cursor-pointer">
-              <FontAwesomeIcon icon={faReact} size="3x" />
+              <FontAwesomeIcon icon={faWindows} size="3x" />
               <h3 className="ml-2 font-bold">Software Engineer</h3>
             </div>
             <p>

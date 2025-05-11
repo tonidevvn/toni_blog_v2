@@ -37,20 +37,24 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                 <a
                   href={project.repoLink}
                   target="_blank"
-                  className="bg-white rounded-3xl font-mono lg:text-base md:text-base transition-all duration-300 px-3 hover:text-indigo-400 font-semibold flex items-center space-x-1"
+                  className="bg-white rounded-3xl lg:text-base md:text-base transition-all duration-300 px-3 font-semibold flex items-center space-x-1"
                   rel="noreferrer"
                 >
-                  <span className="text-gray-500">Code</span>
+                  <span className="text-gray-500 hover:text-indigo-400 font-mono">
+                    Code
+                  </span>
                 </a>
               </div>
               <div className="mr-3">
                 <a
                   href={project.liveLink || undefined}
                   target="_blank"
-                  className="bg-white rounded-3xl font-mono lg:text-base md:text-base transition-all duration-300 px-3 hover:text-indigo-400 font-semibold flex items-center space-x-1"
+                  className="bg-white rounded-3xl lg:text-base md:text-base transition-all duration-300 px-3 font-semibold flex items-center space-x-1"
                   rel="noreferrer"
                 >
-                  <span className="text-gray-500">Live</span>
+                  <span className="text-gray-500 hover:text-indigo-400 font-mono">
+                    Live
+                  </span>
                 </a>
               </div>
             </div>
