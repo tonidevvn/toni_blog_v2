@@ -87,7 +87,7 @@ function About() {
           </header>
           <div>
             <div className="flex flex-wrap items-stretch">
-              <div className="w-full h-full lg:w-8/12 px-10">
+              <div className="w-full h-full lg:w-8/12 lg:px-10">
                 <ul className="space-y-8">
                   {aboutSections.map((section, index) => (
                     <li

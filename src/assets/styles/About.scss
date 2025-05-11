@@ -4,4 +4,13 @@
     flex-direction: column;
     text-align: left;
   }
-  
+
+  @media screen {
+    @media (max-width: 768px) {
+      .about-container {
+        display: block;
+        padding-left: 5%;
+        padding-right: 5%;
+      }
+    }
+  }
