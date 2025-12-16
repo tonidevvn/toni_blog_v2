@@ -1,41 +1,52 @@
-import { useState, useEffect } from "react";
-import FadeIn from "./components/FadeIn";
-import "./index.css";
+import { useEffect, useState } from 'react';
+import FadeIn from './components/FadeIn';
+import './index.css';
 import {
-  Navigation,
   About,
-  Main,
-  Expertise,
-  Timeline,
-  Project,
   Contact,
+  Expertise,
   Footer,
-} from "./components/index"; // Ensure this path is correct
+  Hero,
+  Navigation,
+  Project,
+  Timeline,
+} from './sections';
+
+type ThemeMode = 'light' | 'dark';
+const THEME_KEY = 'theme';
+
+function getInitialTheme(): ThemeMode {
+  const saved = localStorage.getItem(THEME_KEY) as ThemeMode | null;
+  if (saved === 'light' || saved === 'dark') return saved;
+
+  const prefersDark = window.matchMedia?.(
+    '(prefers-color-scheme: dark)'
+  ).matches;
+  return prefersDark ? 'dark' : 'light';
+}
 
 function App() {
-  const [mode, setMode] = useState<string>("dark");
+  const [mode, setMode] = useState<ThemeMode>(() => getInitialTheme());
 
   const handleModeChange = () => {
-    if (mode === "dark") {
-      setMode("light");
-    } else {
-      setMode("dark");
-    }
+    setMode((prev) => (prev === 'dark' ? 'light' : 'dark'));
   };
 
+  // apply class + persist
   useEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    document.documentElement.classList.toggle('dark', mode === 'dark');
+    localStorage.setItem(THEME_KEY, mode);
+  }, [mode]);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
   }, []);
 
   return (
-    <div
-      className={`main-container ${
-        mode === "dark" ? "dark-mode" : "light-mode"
-      }`}
-    >
-      <Navigation parentToChild={{ mode }} modeChange={handleModeChange} />
+    <div className='main-container'>
+      <Navigation mode={mode} modeChange={handleModeChange} />
       <FadeIn transitionDuration={700}>
-        <Main />
+        <Hero />
         <About />
         <Expertise />
         <Timeline />

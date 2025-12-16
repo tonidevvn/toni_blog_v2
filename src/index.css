@@ -1,127 +1,57 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
-html {
-  scroll-behavior: smooth;
-}
+/* -------------------------------------------------------
+   Base: global defaults (light by default, dark via .dark)
+-------------------------------------------------------- */
+@layer base {
+  :root {
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 
-@media (prefers-reduced-motion) {
   html {
-    scroll-behavior: auto;
+    scroll-behavior: smooth;
   }
-}
 
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-size: 1.1rem !important;
-}
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace !important;
-  font-size: 1rem !important;
-}
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+      "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+      sans-serif;
 
-.main-container {
-  position: relative;
-  background-color: #0d1116;
-}
-
-a {
-  text-decoration: none;
-}
-
-a:hover {
-  color: #5000ca;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-    border-color 0.15s ease-in-out;
-}
-
-p,
-a,
-h1,
-h2,
-h3,
-h4,
-h5,
-label,
-button {
-  color: white;
-  font-family: "Lato", sans-serif;
-  @apply cursor-pointer;
-}
-
-.navigation-bar {
-  justify-content: space-between;
-  background-color: transparent;
-
-  button {
+    /* default typography */
     font-size: 1.1rem;
-    font-family: "Lato", sans-serif;
-    text-transform: initial;
-    padding: 6px 10px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    /* Theme surface + text */
+    @apply bg-white text-slate-900 dark:bg-[#0d1116] dark:text-white;
   }
 
-  svg {
-    cursor: pointer;
-  }
-}
-
-.navigation-bar-responsive {
-  span,
-  p {
-    color: #0d1116;
-    font-family: "Lato", sans-serif;
-  }
-}
-
-.container {
-  margin-top: 12px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.header-image {
-  width: 100%;
-  height: 450px;
-
-  img {
-    width: 100%;
-    height: 450px;
-    object-fit: cover;
-  }
-}
-
-.mobile-menu-top {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 5px;
-  font-weight: bold;
-}
-
-.items-container {
-  padding: 5% 10%;
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.light-mode {
-  background-color: transparent;
-
-  .navigation-bar {
-    background-color: transparent;
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+    font-size: 1rem;
   }
 
+  a {
+    text-decoration: none;
+    @apply transition-colors duration-150;
+  }
+
+  a:hover {
+    color: #5000ca;
+  }
+
+  /* Don’t force white text globally. Let dark: handle it. */
   p,
   a,
   h1,
@@ -131,81 +61,85 @@ button {
   h5,
   label,
   button {
-    color: #0d1116;
+    font-family: "Lato", sans-serif;
+    @apply cursor-pointer;
+  }
+}
+
+/* -------------------------------------------------------
+   Components: keep your old classnames but tailwind-ify them
+-------------------------------------------------------- */
+@layer components {
+  .main-container {
+    @apply relative min-h-screen;
   }
 
-  a:hover {
-    color: #5000ca;
-    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-      border-color 0.15s ease-in-out;
+  .container {
+    @apply mt-3 w-full flex flex-col items-center justify-center;
+  }
+
+  .items-container {
+    @apply text-left flex flex-col justify-center py-[5%] px-[10%] max-md:px-[5%];
+  }
+
+  .header-image {
+    @apply w-full h-[450px];
+  }
+
+  .header-image img {
+    @apply w-full h-[450px] object-cover;
+  }
+
+  .mobile-menu-top {
+    @apply flex items-center justify-center gap-1 font-bold;
+  }
+
+  /* Navigation helpers (if you still use these classnames) */
+  .navigation-bar {
+    @apply flex justify-between bg-transparent;
+  }
+
+  .navigation-bar button {
+    @apply px-2.5 py-1.5 text-[1.1rem];
+    font-family: "Lato", sans-serif;
+    text-transform: initial;
   }
 
   .navigation-bar svg {
-    color: #0d1116;
+    @apply cursor-pointer text-slate-900 dark:text-white;
   }
 
-  .skills-container svg {
-    color: #0d1116;
-  }
-
-  .chip {
-    background-color: rgba(0, 0, 0, 0.08);
-    box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
-      0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
-  }
-
-  .vertical-timeline::before {
-    background-color: rgba(0, 0, 0, 0.08);
-  }
-
-  .vertical-timeline--animate .vertical-timeline-element-content.bounce-in {
-    box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
-      0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
-  }
-
-  .vertical-timeline--two-columns
-    .vertical-timeline-element-content
-    .vertical-timeline-element-date {
-    color: gray;
-  }
-
-  .vertical-timeline-element-content-arrow {
-    border-right: 7px solid rgba(0, 0, 0, 0.08) !important;
-  }
-
-  .flex-chips .chip-title {
-    color: #0d1116;
+  /* If you have a responsive nav section with dark text in light mode */
+  .navigation-bar-responsive span,
+  .navigation-bar-responsive p {
+    @apply text-[#0d1116];
+    font-family: "Lato", sans-serif;
   }
 }
 
-@media screen {
-  @media (max-width: 768px) {
-    .items-container {
-      padding: 5% 5%;
-    }
+/* -------------------------------------------------------
+   Utilities: your animations kept intact
+-------------------------------------------------------- */
+@layer utilities {
+  .button-animate {
+    animation: animation-btn 1000ms ease 0ms both;
+  }
+
+  .animate-float {
+    -webkit-animation: float 3s infinite;
+    animation: float 3s infinite;
   }
 }
 
-.button-animate {
-  animation-duration: 1000ms;
-  animation-timing-function: ease;
-  animation-delay: 0ms;
-  animation-name: animation-btn;
-  animation-direction: normal;
-  animation-fill-mode: both;
-  animation-iteration-count: 1;
-}
-
-.animate-float {
-  -webkit-animation: float 3s infinite;
-  animation: float 3s infinite;
-}
-
+/* -------------------------------------------------------
+   Keyframes (plain CSS is perfect here)
+-------------------------------------------------------- */
 @keyframes animation-btn {
   0% {
     opacity: 0;
     transform: translate3d(0px, 100%, 0px);
   }
+
   100% {
     opacity: 1;
     transform: translate3d(0px, 0px, 0px);

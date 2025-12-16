@@ -1,5 +1,19 @@
+.vertical-timeline {
+  &::before {
+    background-color: rgb(111, 123, 139); // slate-600 (dark)
+  }
+}
+
+/* Dark mode */
+.dark {
+  .vertical-timeline {
+    &::before {
+    background-color: rgb(226, 232, 240); // slate-200 (light)
+    }
+  }
+}
+
 .vertical-timeline span {
-    color: white;
     font-family: 'Courier Prime', monospace;
 }
 

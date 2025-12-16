@@ -1,139 +1,145 @@
-import React, { useEffect, useState } from "react";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
-import CssBaseline from "@mui/material/CssBaseline";
-import DarkModeIcon from "@mui/icons-material/DarkMode";
-import Divider from "@mui/material/Divider";
-import Drawer from "@mui/material/Drawer";
-import IconButton from "@mui/material/IconButton";
-import LightModeIcon from "@mui/icons-material/LightMode";
-import List from "@mui/material/List";
-import ListIcon from "@mui/icons-material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemText from "@mui/material/ListItemText";
-import MenuIcon from "@mui/icons-material/Menu";
-import Toolbar from "@mui/material/Toolbar";
-import { scrollToSection } from "../utils";
+import { useEffect, useState } from 'react';
+import { scrollToSection } from '../utils';
+import { MdClose, MdMenu } from 'react-icons/md';
+import DarkModeSwitcher from './DarkModeSwitcher';
 
-const drawerWidth = 240;
 const navItems = [
-  ["Expertise", "expertise"],
-  ["History", "history"],
-  ["Projects", "projects"],
-  ["Contact", "contact"],
-];
+  ['Expertise', 'expertise'],
+  ['History', 'history'],
+  ['Projects', 'projects'],
+  ['Contact', 'contact'],
+] as const;
 
-function Navigation({ parentToChild, modeChange }: any) {
-  const { mode } = parentToChild;
+type NavigationProps = {
+  mode: 'light' | 'dark';
+  modeChange: () => void;
+};
 
-  const [mobileOpen, setMobileOpen] = useState<boolean>(false);
-  const [scrolled, setScrolled] = useState<boolean>(false);
+export default function Navigation({ mode, modeChange }: NavigationProps) {
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
-  const handleDrawerToggle = () => {
-    setMobileOpen((prevState) => !prevState);
-  };
+  const toggleDrawer = () => setMobileOpen((v) => !v);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const navbar = document.getElementById("navigation");
-      if (navbar) {
-        const scrolled = window.scrollY > navbar.clientHeight;
-        setScrolled(scrolled);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    const handleScroll = () => setScrolled(window.scrollY > 8);
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const drawer = (
-    <Box
-      className="navigation-bar-responsive"
-      onClick={handleDrawerToggle}
-      sx={{ textAlign: "center" }}
-    >
-      <p className="mobile-menu-top">
-        <ListIcon />
-        Menu
-      </p>
-      <Divider />
-      <List>
-        {navItems.map((item) => (
-          <ListItem key={item[0]} disablePadding>
-            <ListItemButton
-              sx={{ textAlign: "center" }}
-              onClick={() => scrollToSection(item[1])}
-            >
-              <ListItemText primary={item[0]} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-    </Box>
-  );
+  const iconBtn =
+    'md:hidden inline-flex items-center justify-center h-10 w-10 rounded-md ' +
+    'text-slate-700 hover:bg-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 ' +
+    'dark:text-slate-200 dark:hover:bg-slate-800 transition';
 
   return (
-    <Box sx={{ display: "flex" }}>
-      <CssBaseline />
-      <AppBar
-        component="nav"
-        id="navigation"
-        className={`top-nav navbar-fixed-top${scrolled ? " scrolled" : ""}`}
+    <div className='flex flex-col'>
+      {/* Sticky Navbar */}
+      <div
+        id='navigation'
+        className={[
+          'fixed top-0 left-0 w-full z-50 transition-shadow',
+          'bg-transparent backdrop-blur supports-[backdrop-filter]:bg-white/60',
+          'dark:supports-[backdrop-filter]:bg-slate-950/40',
+          scrolled ? 'shadow-md' : '',
+        ].join(' ')}
       >
-        <Toolbar className="navigation-bar">
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: "none" } }}
+        <div className='flex items-center px-4 py-3 md:py-4 md:px-8'>
+          {/* Left: Mobile menu button */}
+          <button
+            type='button'
+            className={iconBtn}
+            aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={mobileOpen}
+            onClick={toggleDrawer}
           >
-            <MenuIcon />
-          </IconButton>
-          {mode === "dark" ? (
-            <LightModeIcon onClick={() => modeChange()} />
-          ) : (
-            <DarkModeIcon onClick={() => modeChange()} />
-          )}
-          <Box sx={{ display: { xs: "none", sm: "block" } }}>
-            {navItems.map((item) => (
-              <Button
-                key={item[0]}
-                onClick={() => scrollToSection(item[1])}
-                sx={{ color: "#fff" }}
+            {mobileOpen ? <MdClose /> : <MdMenu />}
+          </button>
+
+          {/* Center (optional brand placeholder) */}
+          <div className='ml-2 font-semibold text-slate-800 dark:text-slate-100 md:hidden'>
+            Menu
+          </div>
+
+          {/* Desktop nav */}
+          <div className='hidden md:flex space-x-4 ml-auto'>
+            {navItems.map(([label, id]) => (
+              <button
+                key={id}
+                onClick={() => scrollToSection(id)}
+                className='text-slate-700 dark:text-slate-200 hover:text-indigo-600 dark:hover:text-indigo-400 px-3 py-2 rounded transition'
               >
-                {item[0]}
-              </Button>
+                {label}
+              </button>
             ))}
-          </Box>
-        </Toolbar>
-      </AppBar>
-      <nav>
-        <Drawer
-          variant="temporary"
-          open={mobileOpen}
-          onClose={handleDrawerToggle}
-          ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
-          }}
-          sx={{
-            display: { xs: "block", sm: "none" },
-            "& .MuiDrawer-paper": {
-              boxSizing: "border-box",
-              width: drawerWidth,
-            },
-          }}
+          </div>
+
+          {/* Right: Theme toggle */}
+          <DarkModeSwitcher
+            mode={mode}
+            onToggle={modeChange}
+            className='ml-auto'
+          />
+        </div>
+      </div>
+
+      {/* Mobile Drawer */}
+      {mobileOpen && (
+        <div
+          className='fixed inset-0 z-40 bg-black/40 md:hidden'
+          onClick={toggleDrawer}
         >
-          {drawer}
-        </Drawer>
-      </nav>
-    </Box>
+          <div
+            className='bg-white dark:bg-slate-950 w-72 h-full shadow-lg flex flex-col'
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className='flex items-center justify-between px-4 py-3 border-b border-slate-200 dark:border-slate-800'>
+              <span className='text-slate-800 dark:text-slate-100 font-semibold'>
+                Menu
+              </span>
+
+              {/* Close button (same sizing as burger) */}
+              <button
+                type='button'
+                className={iconBtn.replace('md:hidden ', '')} // drawer is already md:hidden
+                aria-label='Close menu'
+                onClick={toggleDrawer}
+              >
+                <svg
+                  className='h-6 w-6'
+                  fill='none'
+                  stroke='currentColor'
+                  strokeWidth={2}
+                  viewBox='0 0 24 24'
+                  aria-hidden='true'
+                >
+                  <path
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
+                    d='M6 18L18 6M6 6l12 12'
+                  />
+                </svg>
+              </button>
+            </div>
+
+            <nav className='flex-1 flex flex-col py-2'>
+              {navItems.map(([label, id]) => (
+                <button
+                  key={id}
+                  onClick={() => {
+                    scrollToSection(id);
+                    setMobileOpen(false);
+                  }}
+                  className='w-full text-left px-6 py-3 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition'
+                >
+                  {label}
+                </button>
+              ))}
+            </nav>
+          </div>
+        </div>
+      )}
+    </div>
   );
 }
-
-export default Navigation;
