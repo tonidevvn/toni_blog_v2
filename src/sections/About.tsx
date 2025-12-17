@@ -13,10 +13,10 @@ function About() {
   const aboutSections = [
     {
       body: (
-        <p className='text-slate-600 dark:text-gray-400 leading-relaxed mb-3 font-normal'>
+        <p className='text-slate-600 dark:text-gray-300 leading-relaxed mb-3 font-normal'>
           Hello! I'm Toni Pham, a seasoned Software Engineer with over a decade
           of experience in building full-stack applications using JavaScript,
-          React, NextJs, Express (NodeJs), Django and Java Spring Boot. My
+          React, NextJs, Express, NestJs (NodeJs), Django and Spring Boot. My
           expertise lies in designing, developing, and testing web-based
           applications, with a strong focus on data-driven solutions and
           creative problem-solving.
@@ -26,7 +26,7 @@ function About() {
     },
     {
       body: (
-        <p className='text-slate-600 dark:text-gray-400 leading-relaxed mb-3 font-normal'>
+        <p className='text-slate-600 dark:text-gray-300 leading-relaxed mb-3 font-normal'>
           I love the entire process of developing creative software solutions,
           as it allows me to create something both beautiful and functional. I'm
           dedicated to continuously improving my skills to enhance my creativity
@@ -38,10 +38,10 @@ function About() {
     {
       body: (
         <>
-          <p className='text-slate-600 dark:text-gray-400 leading-relaxed mb-3 font-normal'>
+          <p className='text-slate-600 dark:text-gray-300 leading-relaxed mb-3 font-normal'>
             Here are a few technologies I’ve been working with recently:
           </p>
-          <ul className='flex flex-wrap text-slate-600 dark:text-gray-400 px-2'>
+          <ul className='flex flex-wrap text-slate-600 dark:text-gray-300 px-2'>
             <li className='w-full md:w-1/2 mb-2.5 cursor-pointer'>
               <span className="before:content-['▸'] before:mr-3 before:text-indigo-600"></span>
               <span className='italic'>React and NextJs</span>

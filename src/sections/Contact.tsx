@@ -28,9 +28,11 @@ function Contact() {
         <div style={{ animationDelay: '500ms' }}>
           <div className='items-center text-center'>
             <a href='mailto:tonidevvn@gmail.com' rel='noreferrer'>
-              <button className='transition-all duration-300 hover:bg-indigo-600 text-indigo-400 hover:text-white border-2 border-indigo-600 text-2xl font-medium py-2 px-4 rounded inline-flex items-center tracking-widest'>
-                <RiMailSendFill />
-                <span className='ml-4'>Contact Me</span>
+              <button className='group transition-all duration-300 hover:bg-indigo-600 text-indigo-600 hover:text-zinc-200 border-2 border-indigo-600 text-2xl font-medium py-2 px-4 rounded inline-flex items-center tracking-widest'>
+                <RiMailSendFill className='fill-indigo-600 dark:fill-zinc-200 group-hover:fill-zinc-200' />
+                <span className='ml-4 text-indigo-600 dark:text-zinc-200 group-hover:text-zinc-200'>
+                  Contact Me
+                </span>
               </button>
             </a>
           </div>

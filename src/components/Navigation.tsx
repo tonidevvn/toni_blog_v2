@@ -2,8 +2,10 @@ import { useEffect, useState } from 'react';
 import { scrollToSection } from '../utils';
 import { MdClose, MdMenu } from 'react-icons/md';
 import DarkModeSwitcher from './DarkModeSwitcher';
+import Avatar from './Avatar';
 
 const navItems = [
+  ['About', 'about'],
   ['Expertise', 'expertise'],
   ['History', 'history'],
   ['Projects', 'projects'],
@@ -40,12 +42,13 @@ export default function Navigation({ mode, modeChange }: NavigationProps) {
         id='navigation'
         className={[
           'fixed top-0 left-0 w-full z-50 transition-shadow',
-          'bg-transparent backdrop-blur supports-[backdrop-filter]:bg-white/60',
-          'dark:supports-[backdrop-filter]:bg-slate-950/40',
+          'bg-transparent backdrop-blur supports-backdrop-filter:bg-white/60',
+          'dark:supports-backdrop-filter:bg-slate-950/40',
           scrolled ? 'shadow-md' : '',
         ].join(' ')}
       >
         <div className='flex items-center px-4 py-3 md:py-4 md:px-8'>
+
           {/* Left: Mobile menu button */}
           <button
             type='button'
@@ -63,14 +66,18 @@ export default function Navigation({ mode, modeChange }: NavigationProps) {
           </div>
 
           {/* Desktop nav */}
-          <div className='hidden md:flex space-x-4 ml-auto'>
+          <div className='hidden md:flex md:justify-center md:items-center space-x-4 ml-auto'>
             {navItems.map(([label, id]) => (
               <button
                 key={id}
                 onClick={() => scrollToSection(id)}
-                className='text-slate-700 dark:text-slate-200 hover:text-indigo-600 dark:hover:text-indigo-400 px-3 py-2 rounded transition'
+                className='group text-slate-700 dark:text-slate-200 hover:text-indigo-600 dark:hover:text-indigo-400 px-3 py-2 rounded transition'
               >
                 {label}
+
+                <div
+                  className={`h-0.5 mt-0.5 transition-all duration-300 mx-auto group-hover:w-3/4 group-hover:bg-indigo-600 w-0 bg-transparent`}
+                />
               </button>
             ))}
           </div>

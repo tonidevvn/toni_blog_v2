@@ -39,7 +39,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                   className='bg-white rounded-3xl lg:text-base md:text-base transition-all duration-300 px-3 font-semibold flex items-center space-x-1'
                   rel='noreferrer'
                 >
-                  <span className='text-gray-500 hover:text-indigo-400 font-mono'>
+                  <span className='text-gray-500 hover:text-indigo-600 font-mono'>
                     Code
                   </span>
                 </a>
@@ -51,7 +51,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                   className='bg-white rounded-3xl lg:text-base md:text-base transition-all duration-300 px-3 font-semibold flex items-center space-x-1'
                   rel='noreferrer'
                 >
-                  <span className='text-gray-500 hover:text-indigo-400 font-mono'>
+                  <span className='text-gray-500 hover:text-indigo-600 font-mono'>
                     Live
                   </span>
                 </a>
@@ -65,7 +65,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                 {project.technologies.map((tag, index) => (
                   <span
                     key={index}
-                    className='inline-block bg-neutral-800 text-neutral-300 text-xs px-3 py-1 rounded-full border border-neutral-700'
+                    className='inline-block bg-neutral-800 text-neutral-300 text-xs px-3 py-1 rounded-full border border-neutral-700 hover:border-neutral-600 transition-all duration-300'
                   >
                     {tag}
                   </span>

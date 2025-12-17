@@ -1,45 +1,29 @@
-import { useState } from "react";
-import "../assets/styles/Main.scss";
-import Avatar from "../assets/images/toni-photo.jpg";
-import { scrollToSection } from "../utils";
+import { scrollToSection } from '../utils';
+import "../assets/styles/Hero.scss";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { BiExpand } from "react-icons/bi";
+import Avatar from '../components/Avatar';
 
 function Hero() {
-  const [scrollTopVisible, setScrollTopVisible] = useState(false);
-
-  const toggleVisible = () => {
-    const scrolled = document.documentElement.scrollTop;
-    if (scrolled > 300) {
-      setScrollTopVisible(true);
-    } else if (scrolled <= 300) {
-      setScrollTopVisible(false);
-    }
-  };
-
-  window.addEventListener("scroll", toggleVisible);
-
   return (
-    <section id='hero' className='container mx-auto lg:px-6 md:px-6 px-4'>
+    <section id='hero' className='container mx-auto lg:px-6 md:px-6 px-4 py-6'>
       <div className='about-section'>
-        <div className='image-wrapper animate-float '>
-          <img src={Avatar} alt='Avatar' />
-        </div>
-        <div className='content'>
-          <div className='social_icons'>
+        <Avatar animate={true} class='hero-avatar' />
+        <div className='content text-slate-800 dark:text-white'>
+          <div className='social_icons flex gap-10 my-4'>
             <a
               href='https://github.com/tonidevvn'
               target='_blank'
               rel='noreferrer'
             >
-              <FaGithub />
+              <FaGithub className="fill-slate-700 hover:fill-indigo-600 dark:fill-white" />
             </a>
             <a
               href='https://www.linkedin.com/in/tonipham/'
               target='_blank'
               rel='noreferrer'
             >
-              <FaLinkedin />
+              <FaLinkedin className="fill-slate-700 hover:fill-indigo-600 dark:fill-white" />
             </a>
           </div>
           <h1>Hi There 👋</h1>
@@ -76,31 +60,7 @@ function Hero() {
             </div>
           </div>
         </div>
-      </div>
-      <div className='fixed bottom-5 right-5 z-10'>
-        <button
-          aria-label='scroll to top'
-          type='button'
-          onClick={() => scrollToSection('hero')}
-          className={`${
-            scrollTopVisible ? 'opacity-100' : 'opacity-0'
-          } border-2 border-indigo-600 bg-indigo-600 inline-flex items-center rounded-full p-3 text-white shadow-sm transition-all hover:bg-transparent hover:text-indigo-600 dark:hover:text-white duration-300 cursor-pointer`}
-        >
-          <svg
-            stroke='currentColor'
-            fill='currentColor'
-            strokeWidth='0'
-            viewBox='0 0 24 24'
-            className='h-6 w-6'
-            aria-hidden='true'
-            height='1em'
-            width='1em'
-            xmlns='http://www.w3.org/2000/svg'
-          >
-            <path d='M6 18h12v2H6zm6-14.414-6.707 6.707 1.414 1.414L11 7.414V16h2V7.414l4.293 4.293 1.414-1.414z'></path>
-          </svg>
-        </button>
-      </div>
+      </div>      
     </section>
   );
 }

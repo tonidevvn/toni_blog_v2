@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react';
 import FadeIn from './components/FadeIn';
+import ScrollTop from './components/ScrollTop';
 import './index.css';
 import {
   About,
+  Education,
   Contact,
   Expertise,
   Footer,
@@ -48,11 +50,13 @@ function App() {
       <FadeIn transitionDuration={700}>
         <Hero />
         <About />
+        <Education />
         <Expertise />
         <Timeline />
         <Project />
         <Contact />
       </FadeIn>
+      <ScrollTop />
       <Footer />
     </div>
   );
