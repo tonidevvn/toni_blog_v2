@@ -18,7 +18,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   project
 }) => {
   return (
-    <div className='project'>
+    <div className='text-left max-md:pb-[5%]'>
       <div style={{ animationDelay: '0ms' }}>
         <div className='relative overflow-hidden rounded-lg md:rounded-lg lg:rounded-lg shadow-lg shadow-indigo-200/20 cursor-pointer group'>
           <img
@@ -28,7 +28,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           />
           <div className='absolute bottom-0 right-0 w-full h-full bg-gradient-to-t from-neutral-900'></div>
           <div className='absolute bottom-3 left-0 lg:px-6 md:px-6 px-4 py-4 w-full'>
-            <h2 className='text-slate-100 text-shadow-2xs mb-5 text-2xl lg:text-3xl md:text-3xl font-semibold tracking-tight hover:no-underline'>
+            <h2 className='text-slate-100 text-shadow-2xs mb-5 text-2xl lg:text-3xl md:text-3xl font-semibold tracking-tight hover:underline transition-all duration-150 ease-in-out'>
               {project.title}
             </h2>
             <div className='my-2 flex'>

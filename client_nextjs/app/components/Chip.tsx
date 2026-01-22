@@ -13,7 +13,7 @@ const Chip: React.FC<ChipProps> = ({
 }) => {
     return (
       <div
-        className={`chip chip-${variant} chip-${color} cursor-pointer inline-flex bg-neutral-800 text-neutral-300 text-xs px-3 py-1 rounded-full border border-neutral-700 hover:border-neutral-400 transition-all duration-300 items-center justify-center`}
+        className={`chip cursor-pointer inline-flex bg-white text-[#272822] text-[0.8rem] h-[25px] px-3 py-1 rounded-full border border-neutral-200 hover:border-neutral-400 transition-all duration-300 items-center justify-center font-mono`}
       >
         <span>{label}</span>
       </div>

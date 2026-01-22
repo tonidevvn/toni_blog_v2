@@ -5,7 +5,6 @@ import { Suspense } from "react";
 import { OrbitControls } from "@react-three/drei";
 import Developer from "../components/Developer";
 import CanvasLoader from "../components/Loader";
-import "../assets/styles/About.scss";
 
 function About() {
   const [animationName, setAnimationName] = useState("idle");
@@ -79,7 +78,7 @@ function About() {
       className='mt-40 flex justify-between items-center mx-auto px-6 w-full text-slate-900 dark:text-white'
     >
       <div className='container mx-auto lg:px-6 md:px-6'>
-        <div className='about-container'>
+        <div className='flex flex-col text-left px-[10%] py-[5%] max-md:block max-md:px-[5%]'>
           <header className='flex flex-col items-center text-center'>
             <h2 className="font-bold text-5xl mb-12 text-transform: uppercase after:mx-auto after:mb-0 after:block after:mt-9 after:rounded-full after:h-1 after:w-24 after:-translate-y-1 after:bg-indigo-600 after:content-['']">
               About Me

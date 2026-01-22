@@ -1,4 +1,4 @@
-import "../assets/styles/Contact.scss";
+
 import { RiMailSendFill } from 'react-icons/ri';
 
 function Contact() {

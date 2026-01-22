@@ -4,7 +4,7 @@ import mock03 from '../assets/images/mock03.png';
 import mock04 from '../assets/images/mock04.png';
 import mock05 from '../assets/images/mock05.png';
 import mock06 from '../assets/images/mock06.png';
-import '../assets/styles/Project.scss';
+
 import ProjectCard from '../components/ProjectCard';
 
 const projects = [
@@ -15,7 +15,7 @@ const projects = [
       'A React E-commerce web app with an Ant Design interface, designed for development and prototype testing using readily available fake JSON data',
     image: mock04.src,
     technologies: ['React', 'HTML', 'SASS', 'Antd'],
-    repoLink: 'https://github.com/tonidevvn/ecommerce-antd/',
+    repoLink: 'https://github.com/tonidevvn/ecom-explorer-antd',
     liveLink: 'https://ecommerce-antd.vercel.app/',
   },
   {
@@ -25,7 +25,7 @@ const projects = [
       'This favorite movies collection web app leverages React, TypeScript, and Vite, utilizing a streamlined template for rapid development with HMR and ESLint.',
     image: mock02.src,
     technologies: ['React', 'TypeScript', 'HTML', 'CSS'],
-    repoLink: 'https://github.com/tonidevvn/moviesCollection/',
+    repoLink: 'https://github.com/tonidevvn/toni-movies-collection',
     liveLink: 'https://toni-movies-collection.vercel.app/',
   },
   {
@@ -42,7 +42,7 @@ const projects = [
       'Selenium',
       'MySQL',
     ],
-    repoLink: 'https://github.com/tonidevvn/food-price-tracker/',
+    repoLink: 'https://github.com/tonidevvn/food-price-tracker',
     liveLink: null,
   },
   {
@@ -59,7 +59,7 @@ const projects = [
       'Amazon S3',
       'MinIO',
     ],
-    repoLink: 'https://github.com/tonidevvn/FileNest/',
+    repoLink: 'https://github.com/tonidevvn/file-nest',
     liveLink: null,
   },
   {
@@ -88,20 +88,20 @@ const projects = [
       'UWindsor Tours is an interactive 3D WebGL experience where players explore a virtual University of Windsor campus in a fun and engaging way.',
     image: mock06.src,
     technologies: ['Unity', 'C#', 'Game Development', 'Video Game'],
-    repoLink: 'https://github.com/tonidevvn/UWindsor_Tours/',
+    repoLink: 'https://github.com/tonidevvn/UWindsor-virtual-tours',
     liveLink: 'https://uwindsor-tours-landing-page-b37u.vercel.app/',
   },
 ];
 
 function Project() {
   return (
-    <section className='projects-container' id='projects'>
+    <section className='flex flex-col px-[10%] py-[5%] text-left max-md:block max-md:px-[5%]' id='projects'>
       <header className='flex flex-col items-center text-center'>
         <h2 className="font-bold text-5xl mb-12 text-transform: uppercase after:mx-auto after:mb-0 after:block after:mt-9 after:rounded-full after:h-1 after:w-24 after:-translate-y-1 after:bg-indigo-600 after:content-['']">
           Technical Projects
         </h2>
       </header>
-      <div className='projects-grid'>
+      <div className='grid grid-cols-2 gap-[50px] max-md:block'>
         {projects
           .slice()
           .reverse()

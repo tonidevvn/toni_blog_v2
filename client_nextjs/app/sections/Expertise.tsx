@@ -1,5 +1,5 @@
 import { FaCogs, FaDocker, FaReact, FaWindows } from 'react-icons/fa';
-import '../assets/styles/Expertise.scss';
+
 import Chip from '../components/Chip';
 
 const labelsSW = [
@@ -52,14 +52,14 @@ const TechStackTags = ({ tags }: { tags: string[] }) => {
 function Expertise() {
   return (
     <section id='expertise' className='container mx-auto lg:px-6 md:px-6'>
-      <div className='skills-container'>
+      <div className='flex flex-col px-[10%] py-[5%] text-left max-md:block max-md:px-[5%]'>
         <header className='flex flex-col items-center text-center'>
           <h2 className="font-bold text-5xl mb-12 text-transform: uppercase after:mx-auto after:mb-0 after:block after:mt-9 after:rounded-full after:h-1 after:w-24 after:-translate-y-1 after:bg-indigo-600 after:content-['']">
             Expertise
           </h2>
         </header>
-        <div className='skills-grid gap-y-4'>
-          <div className='skill'>
+        <div className='grid grid-cols-2 gap-[50px] gap-y-4 max-md:block'>
+          <div className='items-center text-left max-md:pb-[10%]'>
             <div className='flex align-middle items-center mb-4 cursor-pointer'>
               <FaReact size={32} className='fill-slate-800 dark:fill-white' />
               <h3 className='ml-2 font-bold text-slate-800 dark:text-white'>
@@ -75,7 +75,7 @@ function Expertise() {
             <TechStackTags tags={labelsWeb} />
           </div>
 
-          <div className='skill'>
+          <div className='items-center text-left max-md:pb-[10%]'>
             <div className='flex align-middle items-center mb-4 cursor-pointer'>
               <FaWindows size={32} className='fill-slate-800 dark:fill-white' />
               <h3 className='ml-2 font-bold text-slate-800 dark:text-white'>
@@ -91,7 +91,7 @@ function Expertise() {
             <TechStackTags tags={labelsSW} />
           </div>
 
-          <div className='skill'>
+          <div className='items-center text-left max-md:pb-[10%]'>
             <div className='flex align-middle items-center mb-4 cursor-pointer'>
               <FaCogs size={32} className='fill-slate-800 dark:fill-white' />
               <h3 className='ml-2 font-bold text-slate-800 dark:text-white'>Automation & Testing</h3>
@@ -105,7 +105,7 @@ function Expertise() {
             <TechStackTags tags={labelsTest} />
           </div>
 
-          <div className='skill'>
+          <div className='items-center text-left max-md:pb-[10%]'>
             <div className='flex align-middle items-center mb-4 cursor-pointer'>
               <FaDocker size={32} className='fill-slate-800 dark:fill-white' />
               <h3 className='ml-2 font-bold text-slate-800 dark:text-white'>DevOps & Deployment</h3>

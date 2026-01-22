@@ -8,7 +8,7 @@ import {
   VerticalTimelineElement,
 } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
-import '../assets/styles/Timeline.scss';
+
 
 type TimelineIcon = 'work' | 'edu' | 'freelance' | 'remote';
 
@@ -135,11 +135,11 @@ function Timeline() {
             contentStyle={contentStyle}
             contentArrowStyle={contentArrowStyle}
           >
-            <h3 className='vertical-timeline-element-title'>{item.title}</h3>
-            <h4 className='vertical-timeline-element-subtitle'>
+            <h3 className='vertical-timeline-element-title text-[#272822]'>{item.title}</h3>
+            <h4 className='vertical-timeline-element-subtitle text-[#272822]'>
               {item.subtitle}
             </h4>
-            <p>{item.description}</p>
+            <p className='!text-[#272822]'>{item.description}</p>
           </VerticalTimelineElement>
         );
       }),
@@ -155,7 +155,7 @@ function Timeline() {
           </h2>
         </header>
 
-        <VerticalTimeline>{elements}</VerticalTimeline>
+        <VerticalTimeline className="before:!bg-slate-600 dark:before:!bg-slate-200">{elements}</VerticalTimeline>
       </div>
     </section>
   );
