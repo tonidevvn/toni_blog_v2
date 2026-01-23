@@ -14,7 +14,7 @@ const projects = [
     description:
       'A React E-commerce web app with an Ant Design interface, designed for development and prototype testing using readily available fake JSON data',
     image: mock04,
-    technologies: ['React', 'HTML', 'SASS', 'Antd'],
+    technologies: ['React', 'Vite', 'TypeScript', 'Antd'],
     repoLink: 'https://github.com/tonidevvn/ecom-explorer-antd',
     liveLink: 'https://ecommerce-antd.vercel.app/',
   },
@@ -24,7 +24,7 @@ const projects = [
     description:
       'This favorite movies collection web app leverages React, TypeScript, and Vite, utilizing a streamlined template for rapid development with HMR and ESLint.',
     image: mock02,
-    technologies: ['React', 'TypeScript', 'HTML', 'CSS'],
+    technologies: ['React', 'TypeScript', 'Vite', 'Tailwind'],
     repoLink: 'https://github.com/tonidevvn/toni-movies-collection',
     liveLink: 'https://toni-movies-collection.vercel.app/',
   },
@@ -93,7 +93,20 @@ const projects = [
   },
 ];
 
+import { useState } from 'react';
+import { BiChevronDown } from "react-icons/bi";
+
 function Project() {
+  const [visibleProjects, setVisibleProjects] = useState(4);
+  const totalProjects = projects.length;
+
+  const handleLoadMore = () => {
+    setVisibleProjects((prev) => Math.min(prev + 2, totalProjects));
+  };
+
+  const reversedProjects = [...projects].reverse();
+  const visibleItems = reversedProjects.slice(0, visibleProjects);
+
   return (
     <section className='flex flex-col px-[10%] py-[5%] text-left max-md:block max-md:px-[5%]' id='projects'>
       <header className='flex flex-col items-center text-center mb-12'>
@@ -103,13 +116,22 @@ function Project() {
         <div className='h-1 w-24 bg-gradient-to-r from-sky-400 to-sky-600 rounded-full glow-accent' />
       </header>
       <div className='grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6 max-md:block'>
-        {projects
-          .slice()
-          .reverse()
-          .map((project) => (
-            <ProjectCard key={project.id} project={project} />
-          ))}
+        {visibleItems.map((project) => (
+          <ProjectCard key={project.id} project={project} />
+        ))}
       </div>
+
+      {visibleProjects < totalProjects && (
+        <div className='flex justify-center mt-12'>
+          <button
+            onClick={handleLoadMore}
+            className='btn-glass flex items-center gap-2 group px-8'
+          >
+            <span>Load More</span>
+            <BiChevronDown className='text-xl group-hover:translate-y-1 transition-transform duration-300' />
+          </button>
+        </div>
+      )}
     </section>
   );
 }
