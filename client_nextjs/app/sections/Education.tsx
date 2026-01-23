@@ -25,10 +25,11 @@ export default function Education() {
   return (
     <section id='education' className='scroll-mt-24'>
       <div className='items-container'>
-        <header className='flex flex-col items-center text-center'>
-          <h2 className="font-bold text-5xl mb-12 uppercase after:mx-auto after:block after:mt-9 after:rounded-full after:h-1 after:w-24 after:-translate-y-1 after:bg-indigo-600 after:content-['']">
+        <header className='flex flex-col items-center text-center mb-12'>
+          <h2 className="font-bold text-5xl mb-6 gradient-text-accent uppercase">
             Education
           </h2>
+          <div className='h-1 w-24 bg-gradient-to-r from-sky-400 to-sky-600 rounded-full glow-accent' />
         </header>
 
         <div className='grid grid-cols-1 md:grid-cols-4 gap-x-10 gap-y-4 md:gap-x-10 md:gap-y-12 text-left mx-auto'>
@@ -41,7 +42,7 @@ export default function Education() {
 
               {/* Right column (content) */}
               <div className='col-span-3 text-zinc-300 dark:text-zinc-200 space-y-4'>
-                <div className='text-xl font-bold text-slate-800 dark:text-zinc-200 mb-1'>
+                <div className='text-xl font-bold text-slate-600 dark:text-zinc-200 mb-1'>
                   {item.school}
                 </div>
                 <div className='text-zinc-600 dark:text-zinc-200 font-medium'>

@@ -5,34 +5,34 @@ function Contact() {
   return (
     <section
       id='contact'
-      className='text-slate-600 dark:text-slate-300 mt-20 flex justify-between items-center mx-auto px-6 md:px-6 lg:px-6 w-full'
+      className='relative py-24 lg:py-32 overflow-hidden'
     >
-      <div className='container mx-auto px-6'>
-        <div style={{ animationDelay: '0ms' }}>
-          <header className='flex flex-col items-center text-center'>
-            <h2 className="font-bold text-4xl mb-12 text-transform: uppercase after:mx-auto after:mb-0 after:block after:mt-9 after:rounded-full after:h-1 after:w-24 after:-translate-y-1 after:bg-indigo-600 after:content-['']">
+      {/* Background Accent */}
+      <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-sky-500/10 rounded-full blur-3xl' />
+
+      <div className='container relative z-10 mx-auto px-6 lg:px-12'>
+        <div className='max-w-4xl mx-auto'>
+          <header className='flex flex-col items-center text-center mb-12'>
+            <h2 className='font-bold text-5xl lg:text-6xl mb-6 gradient-text-accent uppercase'>
               Get In Touch
             </h2>
+            <div className='h-1 w-24 bg-gradient-to-r from-sky-400 to-sky-600 rounded-full glow-accent' />
           </header>
-        </div>
-        <div style={{ animationDelay: '0ms' }}>
-          <div className='font-normal text-xl leading-loose items-center text-center mb-12'>
-            <h3 className='text-slate-600 dark:text-slate-300'>
-              Please feel free to contact me if you have any question!{' '}
+
+          <div className='p-8 text-center'>
+            <h3 className='text-slate-700 dark:text-slate-300 text-xl lg:text-2xl mb-4 leading-relaxed'>
+              Please feel free to contact me if you have any question!
             </h3>
-            <h4 className='text-slate-600 dark:text-slate-300'>
+            <h4 className='text-slate-600 dark:text-slate-400 text-lg lg:text-xl leading-relaxed'>
               Or just wanna chat, please do not hesitate to reach out to me!
             </h4>
           </div>
-        </div>
-        <div style={{ animationDelay: '500ms' }}>
-          <div className='items-center text-center'>
+
+          <div className='flex justify-center'>
             <a href='mailto:tonidevvn@gmail.com' rel='noreferrer'>
-              <button className='group transition-all duration-300 hover:bg-indigo-600 text-indigo-600 hover:text-zinc-200 border-2 border-indigo-600 text-2xl font-medium py-2 px-4 rounded inline-flex items-center tracking-widest'>
-                <RiMailSendFill className='fill-indigo-600 dark:fill-zinc-200 group-hover:fill-zinc-200' />
-                <span className='ml-4 text-indigo-600 dark:text-zinc-200 group-hover:text-zinc-200'>
-                  Contact Me
-                </span>
+              <button className='btn-glass group flex items-center gap-3'>
+                <RiMailSendFill className='text-2xl text-sky-400 group-hover:text-sky-500 transition-colors' />
+                <span className='tracking-wide uppercase'>Contact Me</span>
               </button>
             </a>
           </div>
@@ -43,3 +43,4 @@ function Contact() {
 }
 
 export default Contact;
+

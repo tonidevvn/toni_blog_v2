@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { scrollToSection } from '../utils';
+import { FaChevronUp } from 'react-icons/fa';
 
 const ScrollTop = () => {
   const [scrollTopVisible, setScrollTopVisible] = useState(false);
@@ -26,21 +27,9 @@ const ScrollTop = () => {
         onClick={() => scrollToSection('hero')}
         className={`${
           scrollTopVisible ? 'opacity-100' : 'opacity-0'
-        } border-2 border-indigo-600 bg-indigo-600 inline-flex items-center rounded-full p-3 text-white shadow-sm transition-all hover:bg-transparent hover:text-indigo-600 dark:hover:text-white duration-300 cursor-pointer`}
+        } btn-glass flex items-center justify-center size-12 rounded-full p-3 shadow-sm transition-all duration-300 cursor-pointer`}
       >
-        <svg
-          stroke='currentColor'
-          fill='currentColor'
-          strokeWidth='0'
-          viewBox='0 0 24 24'
-          className='h-6 w-6'
-          aria-hidden='true'
-          height='1em'
-          width='1em'
-          xmlns='http://www.w3.org/2000/svg'
-        >
-          <path d='M6 18h12v2H6zm6-14.414-6.707 6.707 1.414 1.414L11 7.414V16h2V7.414l4.293 4.293 1.414-1.414z'></path>
-        </svg>
+        <FaChevronUp className="size-6" />
       </button>
     </div>
   );

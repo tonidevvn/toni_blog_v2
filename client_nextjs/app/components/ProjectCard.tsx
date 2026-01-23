@@ -9,7 +9,7 @@ interface ProjectCardProps {
     technologies: string[];
     repoLink: string;
     liveLink: string | null;
-    
+
   };
   // Existing props definition
 }
@@ -18,60 +18,53 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   project
 }) => {
   return (
-    <div className='text-left max-md:pb-[5%]'>
-      <div style={{ animationDelay: '0ms' }}>
-        <div className='relative overflow-hidden rounded-lg md:rounded-lg lg:rounded-lg shadow-lg shadow-indigo-200/20 cursor-pointer group'>
-          <img
-            src={project.image}
-            alt='project_images'
-            className='object-cover w-full h-[450px] group-hover:scale-110 transition-all duration-500'
-          />
-          <div className='absolute bottom-0 right-0 w-full h-full bg-gradient-to-t from-neutral-900'></div>
-          <div className='absolute bottom-3 left-0 lg:px-6 md:px-6 px-4 py-4 w-full'>
-            <h2 className='text-slate-100 text-shadow-2xs mb-5 text-2xl lg:text-3xl md:text-3xl font-semibold tracking-tight hover:underline transition-all duration-150 ease-in-out'>
-              {project.title}
-            </h2>
-            <div className='my-2 flex'>
-              <div className='mr-3'>
-                <a
-                  href={project.repoLink}
-                  target='_blank'
-                  className='bg-white rounded-3xl lg:text-base md:text-base transition-all duration-300 px-3 font-semibold flex items-center space-x-1'
-                  rel='noreferrer'
-                >
-                  <span className='text-gray-500 hover:text-indigo-600 font-mono'>
-                    Code
-                  </span>
-                </a>
-              </div>
-              <div className='mr-3'>
-                <a
-                  href={project.liveLink || undefined}
-                  target='_blank'
-                  className='bg-white rounded-3xl lg:text-base md:text-base transition-all duration-300 px-3 font-semibold flex items-center space-x-1'
-                  rel='noreferrer'
-                >
-                  <span className='text-gray-500 hover:text-indigo-600 font-mono'>
-                    Live
-                  </span>
-                </a>
-              </div>
-            </div>
-            <p className='mb-5 text-[13px] text-slate-100 leading-normal'>
-              {project.description}
-            </p>
-            <div className=''>
-              <div className='flex flex-wrap lg:gap-1 md:gap-3 gap-2 border-t-[0.2px] border-neutral-50/60 pt-3'>
-                {project.technologies.map((tag, index) => (
-                  <span
-                    key={index}
-                    className='inline-block bg-neutral-800 text-neutral-300 text-xs px-3 py-1 rounded-full border border-neutral-700 hover:border-neutral-600 transition-all duration-300'
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
+    <div className='glass-card group my-4'>
+      <div className='relative overflow-hidden rounded-lg md:rounded-lg lg:rounded-lg shadow-lg shadow-indigo-200/20 cursor-pointer group'>
+        <img
+          src={project.image}
+          alt='project_images'
+          className='object-cover w-full h-[450px] group-hover:scale-110 transition-all duration-500'
+        />
+        <div className='absolute bottom-0 right-0 w-full h-full bg-gradient-to-t from-neutral-900'></div>
+        <div className='absolute bottom-3 left-0 lg:px-6 md:px-6 px-4 py-4 w-full'>
+          <h2 className='text-white text-2xl lg:text-3xl font-bold mb-4 glow-text'>
+            {project.title}
+          </h2>
+
+          <div className='flex gap-3 mb-4'>
+            <a
+              href={project.repoLink}
+              target='_blank'
+              className='glass-card-subtle px-4 py-1 rounded-full text-sm font-semibold text-zinc-700 border-zinc-200/50 dark:text-white dark:border-zinc-100/50 transition-all duration-300'
+              rel='noreferrer'
+            >
+              Code
+            </a>
+            {project.liveLink && (
+              <a
+                href={project.liveLink}
+                target='_blank'
+                className='glass-card-subtle px-4 py-1 rounded-full text-sm font-semibold text-zinc-700 border-zinc-200/50 dark:text-white dark:border-zinc-100/50 transition-all duration-300'
+                rel='noreferrer'
+              >
+                Live
+              </a>
+            )}
+          </div>
+
+          <p className='text-slate-300 text-sm leading-relaxed mb-4'>
+            {project.description}
+          </p>
+
+          <div className='flex flex-wrap gap-2 border-t border-sky-500/20 pt-4'>
+            {project.technologies.map((tag, index) => (
+              <span
+                key={index}
+                className='inline-block bg-sky-500/10 text-sky-300 text-xs px-3 py-1 rounded-full border border-sky-500/30 hover:border-sky-400 transition-all duration-300 backdrop-blur-sm'
+              >
+                {tag}
+              </span>
+            ))}
           </div>
         </div>
       </div>
@@ -80,3 +73,4 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 };
 
 export default ProjectCard;
+

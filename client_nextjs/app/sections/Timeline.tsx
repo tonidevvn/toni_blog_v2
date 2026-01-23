@@ -92,7 +92,7 @@ const TIMELINE_ITEMS: TimelineItem[] = [
 const DATE_CLASS =
   'font-semibold !text-slate-900 dark:md:!text-slate-300 drop-shadow-sm dark:drop-shadow-md';
 
-const ICON_STYLE = { background: '#5000ca', color: 'rgb(39, 40, 34)' } as const;
+const ICON_CLASS = 'bg-gradient-to-r from-sky-400 to-sky-600';
 
 const LIGHT_SHADOW = '0 4px 12px rgba(0, 0, 0, 0.12)';
 
@@ -130,16 +130,16 @@ function Timeline() {
             className='vertical-timeline-element--work'
             date={item.date}
             dateClassName={DATE_CLASS}
-            iconStyle={ICON_STYLE}
+            iconClassName={ICON_CLASS}
             icon={getIcon(item.icon)}
             contentStyle={contentStyle}
             contentArrowStyle={contentArrowStyle}
           >
-            <h3 className='vertical-timeline-element-title text-[#272822]'>{item.title}</h3>
-            <h4 className='vertical-timeline-element-subtitle text-[#272822]'>
+            <h3 className='vertical-timeline-element-title text-slate-600'>{item.title}</h3>
+            <h4 className='vertical-timeline-element-subtitle text-slate-600'>
               {item.subtitle}
             </h4>
-            <p className='!text-[#272822]'>{item.description}</p>
+            <p className='text-slate-600'>{item.description}</p>
           </VerticalTimelineElement>
         );
       }),
@@ -149,10 +149,11 @@ function Timeline() {
   return (
     <section id='history'>
       <div className='items-container text-slate-800 dark:text-slate-300'>
-        <header className='flex flex-col items-center text-center'>
-          <h2 className="font-bold text-5xl mb-12 uppercase after:mx-auto after:mb-0 after:block after:mt-9 after:rounded-full after:h-1 after:w-24 after:-translate-y-1 after:bg-indigo-600 after:content-['']">
+        <header className='flex flex-col items-center text-center mb-12'>
+          <h2 className="font-bold text-5xl mb-6 gradient-text-accent uppercase">
             Career History
           </h2>
+          <div className='h-1 w-24 bg-gradient-to-r from-sky-400 to-sky-600 rounded-full glow-accent' />
         </header>
 
         <VerticalTimeline className="before:!bg-slate-600 dark:before:!bg-slate-200">{elements}</VerticalTimeline>

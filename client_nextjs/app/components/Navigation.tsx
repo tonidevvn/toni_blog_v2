@@ -32,7 +32,7 @@ export default function Navigation({ mode, modeChange }: NavigationProps) {
 
   const iconBtn =
     'md:hidden inline-flex items-center justify-center h-10 w-10 rounded-md ' +
-    'text-slate-700 hover:bg-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 ' +
+    'text-slate-700 hover:bg-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 ' +
     'dark:text-slate-200 dark:hover:bg-slate-800 transition';
 
   return (
@@ -71,12 +71,12 @@ export default function Navigation({ mode, modeChange }: NavigationProps) {
               <button
                 key={id}
                 onClick={() => scrollToSection(id)}
-                className='group text-slate-700 dark:text-slate-200 hover:text-indigo-600 dark:hover:text-indigo-400 px-3 py-2 rounded transition'
+                className='cursor-pointer group text-slate-700 dark:text-slate-200 hover:text-sky-600 dark:hover:text-sky-400 px-3 py-2 rounded transition'
               >
                 {label}
 
                 <div
-                  className={`h-0.5 mt-0.5 transition-all duration-300 mx-auto group-hover:w-3/4 group-hover:bg-indigo-600 w-0 bg-transparent`}
+                  className={`h-0.5 mt-0.5 transition-all duration-300 mx-auto group-hover:w-3/4 group-hover:bg-sky-600 w-0 bg-transparent`}
                 />
               </button>
             ))}
@@ -138,7 +138,7 @@ export default function Navigation({ mode, modeChange }: NavigationProps) {
                     scrollToSection(id);
                     setMobileOpen(false);
                   }}
-                  className='w-full text-left px-6 py-3 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition'
+                  className='cursor-pointer w-full text-left px-6 py-3 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition'
                 >
                   {label}
                 </button>

@@ -18,25 +18,22 @@ import {
 type ThemeMode = 'light' | 'dark';
 const THEME_KEY = 'theme';
 
-function getInitialTheme(): ThemeMode {
-  // Check if running on client check
-  if (typeof window === 'undefined') return 'light'; 
-  
-  const saved = localStorage.getItem(THEME_KEY) as ThemeMode | null;
-  if (saved === 'light' || saved === 'dark') return saved;
-
-  const prefersDark = window.matchMedia?.(
-    '(prefers-color-scheme: dark)'
-  ).matches;
-  return prefersDark ? 'dark' : 'light';
-}
-
 function Page() {
-  const [mode, setMode] = useState<ThemeMode>(() => getInitialTheme());
+  const [mode, setMode] = useState<ThemeMode>('dark');
 
   const handleModeChange = () => {
     setMode((prev) => (prev === 'dark' ? 'light' : 'dark'));
   };
+
+  useEffect(() => {
+    // Initial theme check
+    const saved = localStorage.getItem(THEME_KEY) as ThemeMode | null;
+    if (saved === 'light' || saved === 'dark') {
+      setMode(saved);
+    } else if (window.matchMedia?.('(prefers-color-scheme: dark)').matches) {
+      setMode('dark');
+    }
+  }, []);
 
   // apply class + persist
   useEffect(() => {

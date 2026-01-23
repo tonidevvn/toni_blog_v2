@@ -38,32 +38,32 @@ function About() {
       body: (
         <>
           <p className='text-slate-600 dark:text-gray-300 leading-relaxed mb-3 font-normal'>
-            Here are a few technologies I’ve been working with recently:
+            Here are a few technologies I've been working with recently:
           </p>
           <ul className='flex flex-wrap text-slate-600 dark:text-gray-300 px-2'>
             <li className='w-full md:w-1/2 mb-2.5 cursor-pointer'>
-              <span className="before:content-['▸'] before:mr-3 before:text-indigo-600"></span>
-              <span className='italic'>React and NextJs</span>
+              <span className="before:content-['▸'] before:mr-3 before:text-sky-400"></span>
+              <span className='italic'>Frontend: React, NextJs</span>
             </li>
             <li className='w-full md:w-1/2 mb-2.5 cursor-pointer'>
-              <span className="before:content-['▸'] before:mr-3 before:text-indigo-600"></span>
-              <span className='italic'>JavaScript and TypeScript</span>
+              <span className="before:content-['▸'] before:mr-3 before:text-sky-400"></span>
+              <span className='italic'>Backend: Express, NestJs, Fastify (Node.js)</span>
             </li>
             <li className='w-full md:w-1/2 mb-2.5 cursor-pointer'>
-              <span className="before:content-['▸'] before:mr-3 before:text-indigo-600"></span>
-              <span className='italic'>Express, NestJs (Node.js)</span>
+              <span className="before:content-['▸'] before:mr-3 before:text-sky-400"></span>
+              <span className='italic'>Languages: JS/TypeScript, Python, Java</span>
             </li>
             <li className='w-full md:w-1/2 mb-2.5 cursor-pointer'>
-              <span className="before:content-['▸'] before:mr-3 before:text-indigo-600"></span>
-              <span className='italic'>MySQL, PostgreSQL and MongoDB</span>
+              <span className="before:content-['▸'] before:mr-3 before:text-sky-400"></span>
+              <span className='italic'>Databases: MySQL, PostgreSQL and MongoDB</span>
             </li>
             <li className='w-full md:w-1/2 mb-2.5 cursor-pointer'>
-              <span className="before:content-['▸'] before:mr-3 before:text-indigo-600"></span>
-              <span className='italic'>Python Django</span>
+              <span className="before:content-['▸'] before:mr-3 before:text-sky-400"></span>
+              <span className='italic'>Frameworks: Django, FastAPI</span>
             </li>
             <li className='w-full md:w-1/2 mb-2.5 cursor-pointer'>
-              <span className="before:content-['▸'] before:mr-3 before:text-indigo-600"></span>
-              <span className='italic'>AWS (S3, EC2 ...)</span>
+              <span className="before:content-['▸'] before:mr-3 before:text-sky-400"></span>
+              <span className='italic'>Cloud: AWS (S3, EC2 ...)</span>
             </li>
           </ul>
         </>
@@ -75,19 +75,23 @@ function About() {
   return (
     <section
       id='about'
-      className='mt-40 flex justify-between items-center mx-auto px-6 w-full text-slate-900 dark:text-white'
+      className='relative py-24 lg:py-32 overflow-hidden'
     >
-      <div className='container mx-auto lg:px-6 md:px-6'>
-        <div className='flex flex-col text-left px-[10%] py-[5%] max-md:block max-md:px-[5%]'>
-          <header className='flex flex-col items-center text-center'>
-            <h2 className="font-bold text-5xl mb-12 text-transform: uppercase after:mx-auto after:mb-0 after:block after:mt-9 after:rounded-full after:h-1 after:w-24 after:-translate-y-1 after:bg-indigo-600 after:content-['']">
+      {/* Background Accent */}
+      <div className='absolute top-1/4 right-0 w-96 h-96 bg-sky-500/10 rounded-full blur-3xl' />
+
+      <div className='container relative z-10 mx-auto px-6 lg:px-12'>
+        <div className='max-w-7xl mx-auto'>
+          <header className='flex flex-col items-center text-center mb-16'>
+            <h2 className='font-bold text-5xl lg:text-6xl mb-6 gradient-text-accent uppercase'>
               About Me
             </h2>
+            <div className='h-1 w-24 bg-gradient-to-r from-sky-400 to-sky-600 rounded-full glow-accent' />
           </header>
           <div>
-            <div className='flex flex-wrap items-stretch'>
-              <div className='w-full h-full lg:w-8/12 lg:px-10'>
-                <ul className='space-y-8'>
+            <div className='flex flex-col lg:flex-row items-stretch gap-8'>
+              <div className='w-full lg:w-8/12'>
+                <ul className='space-y-6'>
                   {aboutSections.map((section, index) => (
                     <li
                       key={index}
@@ -96,7 +100,7 @@ function About() {
                         setAnimationName(section.animationName)
                       }
                       onPointerOut={() => setAnimationName('idle')}
-                      className='p-2 cursor-pointer transition-all duration-300 hover:bg-amber-50 dark:hover:bg-neutral-900 rounded-lg'
+                      className='glass-card p-6 cursor-pointer hover:border-sky-400 transition-all duration-300'
                     >
                       {section.body}
                     </li>
