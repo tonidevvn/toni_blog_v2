@@ -10,24 +10,24 @@
 -------------------------------------------------------- */
 @layer base {
   :root {
-    /* Light Mode Colors */
+    /* Light Mode Colors - Enhanced Contrast */
     --light-bg: #ffffff;
     --light-bg-secondary: #f8fafc;
-    --light-text: #1e293b;
-    --light-text-secondary: #475569;
+    --light-text: #0f172a;
+      --light-text-secondary: #334155;
     --light-border: #e2e8f0;
-    --light-shadow: rgba(15, 23, 42, 0.08);
+    --light-shadow: rgba(15, 23, 42, 0.1);
 
-    /* Light Mode Glassmorphism */
-    --light-glass-bg: rgba(255, 255, 255, 0.7);
-    --light-glass-border: rgba(59, 187, 231, 0.2);
-    --light-glass-shadow: rgba(59, 187, 231, 0.15);
+    /* Light Mode Glassmorphism - Improved Visibility */
+      --light-glass-bg: rgba(255, 255, 255, 0.85);
+      --light-glass-border: rgba(59, 187, 231, 0.3);
+      --light-glass-shadow: rgba(59, 187, 231, 0.2);
 
-    /* Light Mode Glow Effects (more subtle) */
-    --light-glow-sm: 0 0 8px rgba(59, 187, 231, 0.2);
-    --light-glow-md: 0 0 15px rgba(59, 187, 231, 0.25);
-    --light-glow-lg: 0 0 25px rgba(59, 187, 231, 0.3);
-    --light-glow-xl: 0 0 35px rgba(59, 187, 231, 0.35);
+    /* Light Mode Glow Effects - Subtle & Professional */
+      --light-glow-sm: 0 0 6px rgba(59, 187, 231, 0.15);
+      --light-glow-md: 0 0 12px rgba(59, 187, 231, 0.2);
+      --light-glow-lg: 0 0 20px rgba(59, 187, 231, 0.25);
+      --light-glow-xl: 0 0 30px rgba(59, 187, 231, 0.3);
 
     /* Sky Blue Accents (shared) */
     --sky-blue: #3bbbe7;
@@ -79,8 +79,8 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 
-    /* Light Mode Background (default) */
-    background: linear-gradient(135deg, #f8fafc 0%, #e0f2fe 50%, #f1f5f9 100%);
+    /* Light Mode Background - Softer Gradient */
+      background: linear-gradient(135deg, #f8fafc 0%, #f0f9ff 50%, #f8fafc 100%);
     background-attachment: fixed;
     color: var(--light-text);
   }
@@ -133,16 +133,16 @@
 
   /* Glass Card - Primary glassmorphism effect */
   .glass-card {
-    /* Light mode by default */
+    /* Light mode by default - Enhanced Visibility */
     background: var(--light-glass-bg);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
     border: 1px solid var(--light-glass-border);
     border-radius: 20px;
     box-shadow:
       0 8px 32px 0 var(--light-shadow),
-      inset 0 1px 1px 0 rgba(255, 255, 255, 0.5);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      inset 0 1px 1px 0 rgba(255, 255, 255, 0.6);
+        transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .dark .glass-card {
@@ -154,15 +154,12 @@
   }
 
   .glass-card:hover {
-    transform: translateY(-4px);
+    transform: translateY(-2px);
     border-color: var(--sky-blue);
-  }
-
-  .glass-card:hover {
     box-shadow:
-      0 12px 40px 0 rgba(59, 187, 231, 0.2),
+      0 12px 40px 0 rgba(59, 187, 231, 0.25),
       var(--light-glow-md),
-      inset 0 1px 1px 0 rgba(255, 255, 255, 0.6);
+      inset 0 1px 1px 0 rgba(255, 255, 255, 0.7);
   }
 
   .dark .glass-card:hover {
@@ -416,13 +413,13 @@
     animation: fadeIn 0.8s ease-out both;
   }
 
-  /* Scale & Lift */
+    /* Scale & Lift - Minimalist (No Layout Shift) */
   .hover-lift {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
   }
 
   .hover-lift:hover {
-    transform: translateY(-8px) scale(1.02);
+    transform: translateY(-4px);
   }
 
   /* Pulse Glow */
@@ -580,7 +577,14 @@
 @media (max-width: 768px) {
   .glass-card {
     border-radius: 16px;
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    
+    /* Reduce animations on mobile for performance */
+    @media (prefers-reduced-motion: no-preference) {
+      .hover-lift:hover {
+        transform: translateY(-2px);
+      }
   }
 }

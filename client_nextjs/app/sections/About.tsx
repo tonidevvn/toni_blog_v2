@@ -12,7 +12,7 @@ function About() {
   const aboutSections = [
     {
       body: (
-        <p className='text-slate-600 dark:text-gray-300 leading-relaxed mb-3 font-normal'>
+        <p className='text-slate-700 dark:text-gray-300 leading-relaxed mb-3 font-normal'>
           Hello! I'm Toni Pham, a seasoned Software Engineer with over a decade
           of experience in building full-stack applications using JavaScript,
           React, NextJs, Express, NestJs (NodeJs), Django and Spring Boot. My
@@ -25,7 +25,7 @@ function About() {
     },
     {
       body: (
-        <p className='text-slate-600 dark:text-gray-300 leading-relaxed mb-3 font-normal'>
+        <p className='text-slate-700 dark:text-gray-300 leading-relaxed mb-3 font-normal'>
           I love the entire process of developing creative software solutions,
           as it allows me to create something both beautiful and functional. I'm
           dedicated to continuously improving my skills to enhance my creativity
@@ -37,10 +37,10 @@ function About() {
     {
       body: (
         <>
-          <p className='text-slate-600 dark:text-gray-300 leading-relaxed mb-3 font-normal'>
+          <p className='text-slate-700 dark:text-gray-300 leading-relaxed mb-3 font-normal'>
             Here are a few technologies I've been working with recently:
           </p>
-          <ul className='flex flex-wrap text-slate-600 dark:text-gray-300 px-2'>
+          <ul className='flex flex-wrap text-slate-700 dark:text-gray-300 px-2'>
             <li className='w-full md:w-1/2 mb-2.5 cursor-pointer'>
               <span className="before:content-['▸'] before:mr-3 before:text-sky-400"></span>
               <span className='italic'>Frontend: React, NextJs</span>
@@ -59,7 +59,7 @@ function About() {
             </li>
             <li className='w-full md:w-1/2 mb-2.5 cursor-pointer'>
               <span className="before:content-['▸'] before:mr-3 before:text-sky-400"></span>
-              <span className='italic'>Frameworks: Django, FastAPI</span>
+              <span className='italic'>Frameworks: Django, FastAPI, Spring Boot</span>
             </li>
             <li className='w-full md:w-1/2 mb-2.5 cursor-pointer'>
               <span className="before:content-['▸'] before:mr-3 before:text-sky-400"></span>
@@ -77,8 +77,8 @@ function About() {
       id='about'
       className='relative py-24 lg:py-32 overflow-hidden'
     >
-      {/* Background Accent */}
-      <div className='absolute top-1/4 right-0 w-96 h-96 bg-sky-500/10 rounded-full blur-3xl' />
+      {/* Background Accent - Subtle */}
+      <div className='absolute top-1/4 right-0 w-96 h-96 bg-sky-500/5 rounded-full blur-3xl' />
 
       <div className='container relative z-10 mx-auto px-6 lg:px-12'>
         <div className='max-w-7xl mx-auto'>
@@ -100,7 +100,7 @@ function About() {
                         setAnimationName(section.animationName)
                       }
                       onPointerOut={() => setAnimationName('idle')}
-                      className='glass-card p-6 cursor-pointer hover:border-sky-400 transition-all duration-300'
+                      className='glass-card p-6 cursor-pointer hover:border-sky-400 transition-all duration-200'
                     >
                       {section.body}
                     </li>

@@ -19,25 +19,27 @@ function Hero() {
               href='https://github.com/tonidevvn'
               target='_blank'
               rel='noreferrer'
+              className='glass-card p-3 rounded-lg hover:scale-105 transition-transform duration-200'
             >
-              <FaGithub className="fill-slate-700 hover:fill-sky-600 dark:fill-white" />
+              <FaGithub className="fill-slate-700 hover:fill-sky-600 dark:fill-white dark:hover:fill-sky-400" />
             </a>
             <a
               href='https://www.linkedin.com/in/tonipham/'
               target='_blank'
               rel='noreferrer'
+              className='glass-card p-3 rounded-lg hover:scale-105 transition-transform duration-200'
             >
-              <FaLinkedin className="fill-slate-700 hover:fill-sky-600 dark:fill-white" />
+              <FaLinkedin className="fill-slate-700 hover:fill-sky-600 dark:fill-white dark:hover:fill-sky-400" />
             </a>
           </div>
         </div>
         
         <div className='w-[90%] flex flex-col text-left z-[2] max-md:px-[5%] max-md:pb-[5%] text-slate-800 dark:text-white mt-8 mx-6 md:mt-0'>
-          <h1 className='text-[2em] m-0 md:text-[3em] max-md:text-left text-zinc-800 dark:text-white'>
+          <h1 className='text-[2em] m-0 md:text-[3em] max-md:text-left text-slate-900 dark:text-white flex items-center gap-3'>
             Hi There <span className='inline-block animate-wave'>👋</span>
           </h1>
-          <h1 className='flex text-[2em] m-0 md:text-[3em] max-md:text-left text-zinc-800 dark:text-white'>I'm Thang Pham (Toni)</h1>
-          <p className='text-sm sm:text-base md:text-lg m-0 max-md:text-left text-zinc-800 dark:text-white'>Software Engineer | Full Stack Developer</p>
+          <h1 className='flex text-[2em] m-0 md:text-[3em] max-md:text-left text-slate-900 dark:text-white'>I'm Thang Pham (Toni)</h1>
+          <p className='text-sm sm:text-base md:text-lg m-0 max-md:text-left text-slate-700 dark:text-slate-200'>Software Engineer | Full Stack Developer</p>
 
           <div className='button-animate' style={{ animationDelay: '800ms' }}>
             <div className=''>

@@ -36,20 +36,20 @@ export default function Education() {
           {EDUCATION.map((item) => (
             <React.Fragment key={`${item.school}-${item.period}`}>
               {/* Left column (date) */}
-              <div className='text-zinc-500 dark:text-zinc-400 text-sm tracking-wider mt-4 md:mt-1 font-medium'>
+              <div className='text-slate-700 dark:text-zinc-400 text-sm tracking-wider mt-4 md:mt-1 font-medium'>
                 {item.period}
               </div>
 
               {/* Right column (content) */}
               <div className='col-span-3 text-zinc-300 dark:text-zinc-200 space-y-4'>
-                <div className='text-xl font-bold text-slate-600 dark:text-zinc-200 mb-1'>
+                <div className='text-xl font-bold text-slate-500 dark:text-zinc-200 mb-1'>
                   {item.school}
                 </div>
-                <div className='text-zinc-600 dark:text-zinc-200 font-medium'>
+                <div className='text-slate-500 dark:text-zinc-200 font-medium'>
                   {item.degree}
                 </div>
                 {item.gpa && (
-                  <div className='text-zinc-600 dark:text-zinc-200 text-sm mt-1'>
+                  <div className='text-slate-700 dark:text-zinc-200 text-sm mt-1'>
                     {item.gpa}
                   </div>
                 )}

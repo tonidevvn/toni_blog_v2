@@ -123,13 +123,15 @@ function Project() {
 
       {visibleProjects < totalProjects && (
         <div className='flex justify-center mt-12'>
-          <button
-            onClick={handleLoadMore}
+          <a
+            href='https://github.com/tonidevvn/'
+            target='_blank'
+            rel='noopener noreferrer'
             className='btn-glass flex items-center gap-2 group px-8'
           >
             <span>Load More</span>
             <BiChevronDown className='text-xl group-hover:translate-y-1 transition-transform duration-300' />
-          </button>
+          </a>
         </div>
       )}
     </section>

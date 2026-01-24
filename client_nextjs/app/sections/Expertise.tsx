@@ -52,8 +52,8 @@ const TechStackTags = ({ tags }: { tags: string[] }) => {
 function Expertise() {
   return (
     <section id='expertise' className='relative py-24 lg:py-32 overflow-hidden'>
-      {/* Background Accent */}
-      <div className='absolute top-1/3 left-0 w-96 h-96 bg-sky-500/10 rounded-full blur-3xl' />
+      {/* Background Accent - Subtle */}
+      <div className='absolute top-1/3 left-0 w-96 h-96 bg-sky-500/5 rounded-full blur-3xl' />
 
       <div className='container relative z-10 mx-auto px-6 lg:px-12'>
         <div className='max-w-7xl mx-auto'>
@@ -71,7 +71,7 @@ function Expertise() {
                 <div className='p-3 bg-sky-500/20 rounded-lg glow-accent'>
                   <FaReact size={32} className='text-sky-400' />
                 </div>
-                <h3 className='ml-4 font-bold text-2xl text-zinc-700 dark:text-white'>
+                <h3 className='ml-4 font-bold text-2xl text-slate-900 dark:text-white'>
                   Full Stack Web Development
                 </h3>
               </div>
@@ -90,7 +90,7 @@ function Expertise() {
                 <div className='p-3 bg-sky-500/20 rounded-lg glow-accent'>
                   <FaWindows size={32} className='text-sky-400' />
                 </div>
-                <h3 className='ml-4 font-bold text-2xl text-zinc-700 dark:text-white'>
+                <h3 className='ml-4 font-bold text-2xl text-slate-900 dark:text-white'>
                   Software Engineer
                 </h3>
               </div>
@@ -109,7 +109,7 @@ function Expertise() {
                 <div className='p-3 bg-sky-500/20 rounded-lg glow-accent'>
                   <FaCogs size={32} className='text-sky-400' />
                 </div>
-                <h3 className='ml-4 font-bold text-2xl text-zinc-700 dark:text-white'>
+                <h3 className='ml-4 font-bold text-2xl text-slate-900 dark:text-white'>
                   Automation & Testing
                 </h3>
               </div>
@@ -128,7 +128,7 @@ function Expertise() {
                 <div className='p-3 bg-sky-500/20 rounded-lg glow-accent'>
                   <FaDocker size={32} className='text-sky-400' />
                 </div>
-                <h3 className='ml-4 font-bold text-2xl text-zinc-700 dark:text-white'>
+                <h3 className='ml-4 font-bold text-2xl text-slate-900 dark:text-white'>
                   DevOps & Deployment
                 </h3>
               </div>

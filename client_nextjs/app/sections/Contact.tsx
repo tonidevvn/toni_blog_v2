@@ -7,8 +7,8 @@ function Contact() {
       id='contact'
       className='relative py-24 lg:py-32 overflow-hidden'
     >
-      {/* Background Accent */}
-      <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-sky-500/10 rounded-full blur-3xl' />
+      {/* Background Accent - Subtle */}
+      <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-sky-500/5 rounded-full blur-3xl' />
 
       <div className='container relative z-10 mx-auto px-6 lg:px-12'>
         <div className='max-w-4xl mx-auto'>
@@ -20,10 +20,10 @@ function Contact() {
           </header>
 
           <div className='p-8 text-center'>
-            <h3 className='text-slate-700 dark:text-slate-300 text-xl lg:text-2xl mb-4 leading-relaxed'>
+            <h3 className='text-slate-800 dark:text-slate-300 text-xl lg:text-2xl mb-4 leading-relaxed'>
               Please feel free to contact me if you have any question!
             </h3>
-            <h4 className='text-slate-600 dark:text-slate-400 text-lg lg:text-xl leading-relaxed'>
+            <h4 className='text-slate-700 dark:text-slate-400 text-lg lg:text-xl leading-relaxed'>
               Or just wanna chat, please do not hesitate to reach out to me!
             </h4>
           </div>
