@@ -14,7 +14,7 @@
     --light-bg: #ffffff;
     --light-bg-secondary: #f8fafc;
     --light-text: #0f172a;
-      --light-text-secondary: #334155;
+    --light-text-secondary: #334155;
     --light-border: #e2e8f0;
     --light-shadow: rgba(15, 23, 42, 0.1);
 
@@ -72,10 +72,10 @@
 
   body {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-      "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-      sans-serif;
-    font-size: 1.1rem;
+    font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", sans-serif;
+      font-size: 1.125rem;
+      /* Pro Max: Increased from 1.1rem for premium readability */
+      line-height: 1.7;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 
@@ -108,21 +108,51 @@
 
   p,
   a,
+        label,
+        button {
+          font-family: var(--font-inter), sans-serif;
+        }
   h1,
   h2,
   h3,
   h4,
-  h5,
-  label,
-  button {
-    font-family: "Lato", sans-serif;
+        h5 {
+          font-family: var(--font-outfit), sans-serif;
   }
 
   h1,
   h2,
   h3 {
     font-weight: 700;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.025em;
+      /* Tighter letter spacing for modern headings */
+      line-height: 1.2;
+    }
+    
+    h1 {
+      font-size: 3.5rem;
+    }
+    
+    h2 {
+      font-size: 2.5rem;
+    }
+    
+    h3 {
+      font-size: 2rem;
+    }
+    
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+    
+      h2 {
+        font-size: 2rem;
+      }
+    
+      h3 {
+        font-size: 1.75rem;
+      }
   }
 }
 
@@ -357,7 +387,7 @@
 
   .navigation-bar button {
     @apply px-2.5 py-1.5 text-[1.1rem];
-    font-family: "Lato", sans-serif;
+    font-family: var(--font-inter), sans-serif;
     text-transform: initial;
   }
 
@@ -368,7 +398,7 @@
   .navigation-bar-responsive span,
   .navigation-bar-responsive p {
     @apply text-[#0d1116];
-    font-family: "Lato", sans-serif;
+    font-family: var(--font-inter), sans-serif;
   }
 
   /* Nav Link with Glow Underline */

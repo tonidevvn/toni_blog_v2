@@ -24,7 +24,7 @@ const EDUCATION: EducationItem[] = [
 export default function Education() {
   return (
     <section id='education' className='scroll-mt-24'>
-      <div className='items-container'>
+      <div className='container relative z-10 mx-auto px-10 lg:px-16'>
         <header className='flex flex-col items-center text-center mb-12'>
           <h2 className="font-bold text-5xl mb-6 gradient-text-accent uppercase">
             Education

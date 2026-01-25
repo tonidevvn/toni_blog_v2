@@ -1,13 +1,73 @@
 // Import Canvas from the appropriate library or define it
 import { useState } from "react";
+import Image from "next/image";
 import { Canvas } from "@react-three/fiber"; // Example import, adjust as needed
 import { Suspense } from "react";
 import { OrbitControls } from "@react-three/drei";
 import Developer from "../components/Developer";
 import CanvasLoader from "../components/Loader";
+import useWindowSize from "../hooks/useWindowSize";
+
+const techBadges = [
+  {
+    category: 'Languages', badges: [
+      { name: 'JavaScript', url: 'https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E' },
+      { name: 'TypeScript', url: 'https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white' },
+      { name: 'Python', url: 'https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54' },
+      { name: 'Java', url: 'https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white' },
+      { name: 'C', url: 'https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white' },
+      { name: 'C++', url: 'https://img.shields.io/badge/C++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white' },
+      { name: 'C#', url: 'https://img.shields.io/badge/c%23-%23239120.svg?style=for-the-badge&logo=c-sharp&logoColor=white' },
+    ]
+  },
+  {
+    category: 'Frontend', badges: [
+      { name: 'React', url: 'https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB' },
+      { name: 'Next.js', url: 'https://img.shields.io/badge/Next.js-black?logo=next.js&logoColor=white&style=for-the-badge' },
+      { name: 'Tailwind CSS', url: 'https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white' },
+      { name: 'Redux', url: 'https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white' },
+    ]
+  },
+  {
+    category: 'Backend', badges: [
+      { name: 'Node.js', url: 'https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white' },
+      { name: 'Express.js', url: 'https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB' },
+      { name: 'NestJS', url: 'https://img.shields.io/badge/nestjs-%23E0234E.svg?style=for-the-badge&logo=nestjs&logoColor=white' },
+      { name: 'Fastify', url: 'https://img.shields.io/badge/fastify-%23000000.svg?style=for-the-badge&logo=fastify&logoColor=white' },
+      { name: 'AWS', url: 'https://custom-icon-badges.demolab.com/badge/AWS-%23FF9900.svg?logo=aws&logoColor=white' },
+      { name: 'Supabase', url: 'https://img.shields.io/badge/Supabase-3FCF8E?style=for-the-badge&logo=supabase&logoColor=white' },
+    ]
+  },
+  {
+    category: 'Frameworks', badges: [
+      { name: 'Django', url: 'https://img.shields.io/badge/django-%23092E20.svg?style=for-the-badge&logo=django&logoColor=white' },
+      { name: 'FastAPI', url: 'https://img.shields.io/badge/FastAPI-009485.svg?style=for-the-badge&logo=fastapi&logoColor=white' },
+      { name: 'Spring Boot', url: 'https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white' },
+    ]
+  },
+  {
+    category: 'Databases', badges: [
+      { name: 'MySQL', url: 'https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white' },
+      { name: 'PostgreSQL', url: 'https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white' },
+      { name: 'MongoDB', url: 'https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white' },
+    ]
+  },
+  {
+    category: 'Misc', badges: [
+      { name: 'Docker', url: 'https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white' },
+      { name: 'Git', url: 'https://img.shields.io/badge/git-%23F05032.svg?style=for-the-badge&logo=git&logoColor=white' },
+      { name: 'GitHub', url: 'https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white' },
+      { name: 'Figma', url: 'https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white' },
+      { name: 'Cloudflare', url: 'https://img.shields.io/badge/cloudflare-%23F38020.svg?style=for-the-badge&logo=cloudflare&logoColor=white' },
+    ]
+  },
+];
 
 function About() {
   const [animationName, setAnimationName] = useState("idle");
+
+  const { width } = useWindowSize();
+  const isMobile = width ? width < 768 : false;
 
   const aboutSections = [
     {
@@ -32,7 +92,7 @@ function About() {
           and build visually appealing products.
         </p>
       ),
-      animationName: 'clapping',
+      animationName: 'salute',
     },
     {
       body: (
@@ -40,35 +100,34 @@ function About() {
           <p className='text-slate-700 dark:text-gray-300 leading-relaxed mb-3 font-normal'>
             Here are a few technologies I've been working with recently:
           </p>
-          <ul className='flex flex-wrap text-slate-700 dark:text-gray-300 px-2'>
-            <li className='w-full md:w-1/2 mb-2.5 cursor-pointer'>
-              <span className="before:content-['▸'] before:mr-3 before:text-sky-400"></span>
-              <span className='italic'>Frontend: React, NextJs</span>
-            </li>
-            <li className='w-full md:w-1/2 mb-2.5 cursor-pointer'>
-              <span className="before:content-['▸'] before:mr-3 before:text-sky-400"></span>
-              <span className='italic'>Backend: Express, NestJs, Fastify (Node.js)</span>
-            </li>
-            <li className='w-full md:w-1/2 mb-2.5 cursor-pointer'>
-              <span className="before:content-['▸'] before:mr-3 before:text-sky-400"></span>
-              <span className='italic'>Languages: JS/TypeScript, Python, Java</span>
-            </li>
-            <li className='w-full md:w-1/2 mb-2.5 cursor-pointer'>
-              <span className="before:content-['▸'] before:mr-3 before:text-sky-400"></span>
-              <span className='italic'>Databases: MySQL, PostgreSQL and MongoDB</span>
-            </li>
-            <li className='w-full md:w-1/2 mb-2.5 cursor-pointer'>
-              <span className="before:content-['▸'] before:mr-3 before:text-sky-400"></span>
-              <span className='italic'>Frameworks: Django, FastAPI, Spring Boot</span>
-            </li>
-            <li className='w-full md:w-1/2 mb-2.5 cursor-pointer'>
-              <span className="before:content-['▸'] before:mr-3 before:text-sky-400"></span>
-              <span className='italic'>Cloud: AWS (S3, EC2 ...)</span>
-            </li>
-          </ul>
+          <div className='flex flex-col gap-4 mt-6'>
+            {techBadges.map((category) => (
+              <div key={category.category} className='flex flex-col gap-2'>
+                <h4 className='text-sm font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider'>
+                  {category.category}
+                </h4>
+                <div className='flex flex-wrap gap-2'>
+                  {category.badges.map((badge) => (
+                    <div key={badge.name} className="relative h-7 w-auto transition-transform hover:scale-105">
+                      <Image
+                        src={badge.url}
+                        alt={badge.name}
+                        height={28}
+                        width={0}
+                        style={{ width: 'auto', height: '100%' }}
+                        className="rounded-sm"
+                        unoptimized
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
         </>
       ),
-      animationName: 'salute',
+
+      animationName: 'clapping',
     },
   ];
 
@@ -108,7 +167,7 @@ function About() {
                 </ul>
               </div>
 
-              <div className='w-full h-auto lg:w-4/12 flex items-center justify-center'>
+              <div className='w-full h-[400px] lg:h-auto lg:w-4/12 flex items-center justify-center'>
                 <Canvas>
                   <ambientLight intensity={7} />
                   <spotLight
@@ -123,7 +182,7 @@ function About() {
                   />
                   <Suspense fallback={<CanvasLoader />}>
                     <Developer
-                      position-y={-3}
+                      position-y={isMobile ? -3.5 : -3}
                       scale={3}
                       animationName={animationName}
                     />
