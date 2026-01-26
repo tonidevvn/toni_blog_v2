@@ -27,12 +27,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           className='absolute inset-0 object-cover md:object-bottom w-full h-full rounded-2xl z-0'
         />
         <div className='absolute bottom-0 right-0 w-full h-full bg-gradient-to-t from-neutral-900/90 to-transparent'></div>
-        <div className='absolute bottom-3 left-0 lg:px-6 md:px-6 px-4 py-4 w-full'>
-          <h2 className='text-white text-xl lg:text-2xl font-bold mb-4 glow-text text-shadow-lg/20'>
+        <div className='absolute bottom-3 left-0 lg:px-6 md:px-6 px-4 py-4 w-full flex flex-col justify-between gap-y-4'>
+          <h2 className='text-white text-xl lg:text-2xl font-bold glow-text text-shadow-lg/20 line-clamp-none md:line-clamp-1 lg:line-clamp-2'>
             {project.title}
           </h2>
 
-          <div className='flex gap-3 mb-4'>
+          <div className='flex gap-3'>
             <a
               href={project.repoLink}
               target='_blank'
@@ -53,7 +53,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             )}
           </div>
 
-          <p className='text-slate-300 text-sm leading-relaxed mb-4'>
+          <p className='text-slate-300 text-sm leading-relaxed line-clamp-none md:line-clamp-2 lg:line-clamp-3 xl:line-clamp-none'>
             {project.description}
           </p>
         </div>
@@ -62,7 +62,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         {project.technologies.map((tag, index) => (
           <span
             key={index}
-            className='inline-block bg-sky-500/10 text-sky-600 dark:text-sky-300 text-xs px-3 py-1 rounded-full border border-sky-500/30 hover:border-sky-400 transition-all duration-300 backdrop-blur-sm'
+            className='cursor-pointer inline-block bg-sky-500/10 text-sky-600 dark:text-sky-300 text-xs px-3 py-1 rounded-full border border-sky-500/30 hover:border-sky-400 transition-all duration-300 backdrop-blur-sm'
           >
             {tag}
           </span>
