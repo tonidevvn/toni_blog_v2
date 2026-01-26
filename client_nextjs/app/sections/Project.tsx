@@ -1,9 +1,9 @@
-const mock01 = '/images/mock01.png';
-const mock02 = '/images/mock02.png';
-const mock03 = '/images/mock03.png';
-const mock04 = '/images/mock04.png';
-const mock05 = '/images/mock05.png';
-const mock06 = '/images/mock06.png';
+const mock01 = '/images/mock01.webp';
+const mock02 = '/images/mock02.webp';
+const mock03 = '/images/mock03.webp';
+const mock04 = '/images/mock04.webp';
+const mock05 = '/images/mock05.webp';
+const mock06 = '/images/mock06.webp';
 
 import ProjectCard from '../components/ProjectCard';
 
