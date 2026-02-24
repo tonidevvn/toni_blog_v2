@@ -32,9 +32,9 @@ const labelsWeb = [
   'SASS',
 ];
 
-const labelsTest = ['JUnit', 'Python', 'PyTest', 'Selenium', 'Postman'];
+const labelsDataEng = ['Excel', 'Power BI', 'Python', 'SQL', 'MongoDB'];
 
-const labelsDevOp = ['Git', 'GitHub Actions', 'Docker', 'AWS', 'Linux'];
+const labelsTestDeploy = ['Selenium', 'Postman', 'JUnit', 'PyTest', 'Git', 'GitHub Actions', 'Docker', 'AWS', 'Linux'];
 
 const TechStackTags = ({ tags }: { tags: string[] }) => {
   return (
@@ -76,7 +76,7 @@ function Expertise() {
                 </h3>
               </div>
               <p className='text-slate-700 dark:text-slate-300 leading-relaxed mb-6'>
-                Proficient in frontend and backend development React, NextJs,
+                Proficient in frontend and backend development using React, NextJs,
                 Django, Express, NestJs (Node.js), Spring Boot, with expertise in
                 data management, including database design, integration, and
                 accuracy for scalable, efficient applications.
@@ -96,48 +96,42 @@ function Expertise() {
               </div>
               <p className='text-slate-700 dark:text-slate-300 leading-relaxed mb-6'>
                 With expertise in C++, C#, Java, and Python, I have worked
-                extensively on automotive-grade frameworks, adhering to industry
+                extensively on automotive-grade frameworks, ensuring compliance with industry
                 standards like AUTOSAR and ISO 26262. Proficient in the Software
                 Development Life Cycle (SDLC).
               </p>
               <TechStackTags tags={labelsSW} />
             </div>
 
-            {/* Automation & Testing */}
-            <div className='glass-card p-8 hover-lift'>
-              <div className='flex items-center mb-6'>
-                <div className='p-3 bg-sky-500/20 rounded-lg glow-accent'>
-                  <FaCogs size={32} className='text-sky-400' />
-                </div>
-                <h3 className='ml-4 font-bold text-2xl text-slate-900 dark:text-white'>
-                  Automation & Testing
-                </h3>
-              </div>
-              <p className='text-slate-700 dark:text-slate-300 leading-relaxed mb-6'>
-                Automate and enhance testing processes automatically with
-                Selenium. I have professional experience designing robust,
-                enterprise-grade automation frameworks to ensure seamless web
-                application functionality, reliability, and performance.
-              </p>
-              <TechStackTags tags={labelsTest} />
-            </div>
-
-            {/* DevOps & Deployment */}
+            {/* Automation Testing & Deployment */}
             <div className='glass-card p-8 hover-lift'>
               <div className='flex items-center mb-6'>
                 <div className='p-3 bg-sky-500/20 rounded-lg glow-accent'>
                   <FaDocker size={32} className='text-sky-400' />
                 </div>
                 <h3 className='ml-4 font-bold text-2xl text-slate-900 dark:text-white'>
-                  DevOps & Deployment
+                  Automation Testing & Deployment
                 </h3>
               </div>
               <p className='text-slate-700 dark:text-slate-300 leading-relaxed mb-6'>
-                Once the application is built, I help clients set up DevOps
-                testing, CI/CD pipelines, and deployment automation to support the
-                successful Go-Live.
+                Delivering production-ready reliability through custom automated workflows that streamline the CI/CD process for repeatable deployments from development to Go-Live.</p>
+              <TechStackTags tags={labelsTestDeploy} />
+            </div>
+
+            {/* Data Analysis & Reporting */}
+            <div className='glass-card p-8 hover-lift'>
+              <div className='flex items-center mb-6'>
+                <div className='p-3 bg-sky-500/20 rounded-lg glow-accent'>
+                  <FaCogs size={32} className='text-sky-400' />
+                </div>
+                <h3 className='ml-4 font-bold text-2xl text-slate-900 dark:text-white'>
+                  Data Analysis & Reporting
+                </h3>
+              </div>
+              <p className='text-slate-700 dark:text-slate-300 leading-relaxed mb-6'>
+                Transforming complex datasets into actionable insights through MS Office and Power BI. Expert in building interactive dashboards, automated reporting, and data-driven visualizations to support strategic decision-making.
               </p>
-              <TechStackTags tags={labelsDevOp} />
+              <TechStackTags tags={labelsDataEng} />
             </div>
           </div>
         </div>

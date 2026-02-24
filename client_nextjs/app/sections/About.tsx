@@ -54,11 +54,13 @@ const techBadges = [
   },
   {
     category: 'Misc', badges: [
-      { name: 'Docker', url: 'https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white' },
+      { name: 'Power BI', url: 'https://custom-icon-badges.demolab.com/badge/Power%20BI-F1C912?logo=power-bi&logoColor=fff' },
+      { name: 'Tableau', url: 'https://custom-icon-badges.demolab.com/badge/Tableau-0176D3?logo=tableau&logoColor=fff' },
       { name: 'Git', url: 'https://img.shields.io/badge/git-%23F05032.svg?style=for-the-badge&logo=git&logoColor=white' },
       { name: 'GitHub', url: 'https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white' },
       { name: 'Figma', url: 'https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white' },
       { name: 'Cloudflare', url: 'https://img.shields.io/badge/cloudflare-%23F38020.svg?style=for-the-badge&logo=cloudflare&logoColor=white' },
+      { name: 'Docker', url: 'https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white' },
     ]
   },
 ];

@@ -12,7 +12,7 @@ function Hero() {
         className='relative flex gap-[30px] z-10 justify-start items-center w-full px-[15%] min-h-[700px] max-md:pt-[150px] max-md:block max-md:px-0'
       >
         <div className='absolute inset-0 z-0 bg-no-repeat bg-cover bg-right opacity-30' style={{ backgroundImage: `url(${bgImage})` }}></div>
-        <div className='w-[90%] flex flex-row md:flex-col items-center justify-center max-md:pl-[5%] w-[55%] h-auto md:max-w-[25%] gap-8'>
+        <div className='z-[2] w-[90%] flex flex-row md:flex-col items-center justify-center max-md:pl-[5%] w-[55%] h-auto md:max-w-[25%] gap-8'>
           <Avatar animate={true} class='z-[2] max-w-[200px]' />
           <div className='flex flex-row gap-4 text-white my-4 text-[1.8em]'>
             <a
@@ -34,7 +34,7 @@ function Hero() {
           </div>
         </div>
         
-        <div className='w-[90%] flex flex-col text-left z-[2] max-md:px-[5%] max-md:pb-[5%] text-slate-800 dark:text-white mt-8 mx-6 md:mt-0'>
+        <div className='z-[2] w-[90%] flex flex-col text-left max-md:px-[5%] max-md:pb-[5%] text-slate-800 dark:text-white mt-8 mx-6 md:mt-0'>
           <h1 className='text-[2em] m-0 md:text-[3em] max-md:text-left text-slate-900 dark:text-white flex items-center gap-3'>
             Hi There <span className='inline-block animate-wave'>👋</span>
           </h1>

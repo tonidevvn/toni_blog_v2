@@ -3,12 +3,8 @@ import { LuBriefcaseBusiness } from 'react-icons/lu';
 import { FaGraduationCap } from 'react-icons/fa';
 import { SiFreelancer } from 'react-icons/si';
 import { VscRemoteExplorer } from 'react-icons/vsc';
-import {
-  VerticalTimeline,
-  VerticalTimelineElement,
-} from 'react-vertical-timeline-component';
+import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
-
 
 type TimelineIcon = 'work' | 'edu' | 'freelance' | 'remote';
 
