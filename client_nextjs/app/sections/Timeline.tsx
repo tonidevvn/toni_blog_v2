@@ -3,7 +3,10 @@ import { LuBriefcaseBusiness } from 'react-icons/lu';
 import { FaGraduationCap } from 'react-icons/fa';
 import { SiFreelancer } from 'react-icons/si';
 import { VscRemoteExplorer } from 'react-icons/vsc';
-import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
+import {
+  VerticalTimeline,
+  VerticalTimelineElement,
+} from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 
 type TimelineIcon = 'work' | 'edu' | 'freelance' | 'remote';
@@ -43,7 +46,8 @@ const TIMELINE_ITEMS: TimelineItem[] = [
   {
     id: 'uno-fs-2022',
     date: 'Jul 2022 - Apr 2024',
-    title: 'Full-Stack Developer, Client Support at UNO Media',
+    title:
+      'Full-Stack Developer, Continuous Improvement Specialist, Client Support at UNO Media',
     subtitle: 'Ho Chi Minh, Vietnam',
     description:
       'Frontend Development, Backend Development, User Experience, Automation, Data Governance, Statistical Analysis',
@@ -114,7 +118,6 @@ function Timeline() {
           ...(item.contentBg ? { background: item.contentBg } : null),
           ...{ boxShadow: LIGHT_SHADOW },
         };
-``
         const contentArrowStyle: React.CSSProperties | undefined =
           item.arrowColor
             ? { borderRight: `7px solid ${item.arrowColor}` }
@@ -131,7 +134,9 @@ function Timeline() {
             contentStyle={contentStyle}
             contentArrowStyle={contentArrowStyle}
           >
-            <h3 className='vertical-timeline-element-title text-slate-600'>{item.title}</h3>
+            <h3 className='vertical-timeline-element-title text-slate-600'>
+              {item.title}
+            </h3>
             <h4 className='vertical-timeline-element-subtitle text-slate-600'>
               {item.subtitle}
             </h4>
@@ -139,20 +144,22 @@ function Timeline() {
           </VerticalTimelineElement>
         );
       }),
-    []
+    [],
   );
 
   return (
     <section id='history'>
       <div className='items-container text-slate-800 dark:text-slate-300'>
         <header className='flex flex-col items-center text-center mb-12'>
-          <h2 className="font-bold text-5xl mb-6 gradient-text-accent uppercase">
+          <h2 className='font-bold text-5xl mb-6 gradient-text-accent uppercase'>
             Career History
           </h2>
           <div className='h-1 w-24 bg-gradient-to-r from-sky-400 to-sky-600 rounded-full glow-accent' />
         </header>
 
-        <VerticalTimeline className="before:!bg-slate-600 dark:before:!bg-slate-200">{elements}</VerticalTimeline>
+        <VerticalTimeline className='before:!bg-slate-600 dark:before:!bg-slate-200'>
+          {elements}
+        </VerticalTimeline>
       </div>
     </section>
   );
