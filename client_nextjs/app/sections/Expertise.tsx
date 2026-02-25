@@ -9,7 +9,7 @@ const labelsSW = [
   'Java',
   'Python',
   'Visual Studio',
-  'WindowForm',
+  'Window Forms',
   'WPF',
   'VB.NET',
 ];
@@ -32,15 +32,31 @@ const labelsWeb = [
   'SASS',
 ];
 
-const labelsDataEng = ['Excel', 'Power BI', 'Python', 'SQL', 'MongoDB'];
+const labelsDataEng = [
+  'Power BI',
+  'MS Excel',
+  'Python',
+  'SQL',
+  'Google AppSheet',
+];
 
-const labelsTestDeploy = ['Selenium', 'Postman', 'JUnit', 'PyTest', 'Git', 'GitHub Actions', 'Docker', 'AWS', 'Linux'];
+const labelsTestDeploy = [
+  'Selenium',
+  'Postman',
+  'JUnit',
+  'PyTest',
+  'Git',
+  'GitHub Actions',
+  'Docker',
+  'AWS',
+  'Linux',
+];
 
 const TechStackTags = ({ tags }: { tags: string[] }) => {
   return (
     <div className='flex-chips flex flex-wrap mt-4 gap-2 items-center'>
-      <span className='text-slate-800 dark:text-slate-300'>
-        Tech stack:
+      <span className='font-mono text-sm text-slate-600 dark:text-slate-300 hover:bg-amber-50 dark:hover:bg-amber-900/20 rounded-full px-2 py-1 transition-colors duration-200'>
+        Tech stack & Tools:
       </span>
       {tags.map((tag, index) => (
         <Chip key={index} label={tag} />
@@ -76,10 +92,10 @@ function Expertise() {
                 </h3>
               </div>
               <p className='text-slate-700 dark:text-slate-300 leading-relaxed mb-6'>
-                Proficient in frontend and backend development using React, NextJs,
-                Django, Express, NestJs (Node.js), Spring Boot, with expertise in
-                data management, including database design, integration, and
-                accuracy for scalable, efficient applications.
+                Proficient in frontend and backend development using React,
+                Next.js, Django, Express, NestJS, Spring Boot. Expertise
+                in database design, ensuring data integrity and high-performance
+                integration for scalable, data-driven applications.
               </p>
               <TechStackTags tags={labelsWeb} />
             </div>
@@ -96,9 +112,9 @@ function Expertise() {
               </div>
               <p className='text-slate-700 dark:text-slate-300 leading-relaxed mb-6'>
                 With expertise in C++, C#, Java, and Python, I have worked
-                extensively on automotive-grade frameworks, ensuring compliance with industry
-                standards like AUTOSAR and ISO 26262. Proficient in the Software
-                Development Life Cycle (SDLC).
+                extensively on automotive-grade frameworks, ensuring compliance
+                with industry standards like AUTOSAR and ISO 26262. Proficient
+                in the full Software Development Life Cycle.
               </p>
               <TechStackTags tags={labelsSW} />
             </div>
@@ -114,7 +130,11 @@ function Expertise() {
                 </h3>
               </div>
               <p className='text-slate-700 dark:text-slate-300 leading-relaxed mb-6'>
-                Delivering production-ready reliability through custom automated workflows that streamline the CI/CD process for repeatable deployments from development to Go-Live.</p>
+                Focused on eliminating manual bottlenecks through custom
+                automated workflows and optimized CI/CD processes. Proficient
+                in scalable deployments while ensuring high standards for
+                functionality, security, and performance.
+              </p>
               <TechStackTags tags={labelsTestDeploy} />
             </div>
 
@@ -129,7 +149,10 @@ function Expertise() {
                 </h3>
               </div>
               <p className='text-slate-700 dark:text-slate-300 leading-relaxed mb-6'>
-                Transforming complex datasets into actionable insights through MS Office and Power BI. Expert in building interactive dashboards, automated reporting, and data-driven visualizations to support strategic decision-making.
+                Transforming complex datasets into actionable insights through
+                MS Office and Power BI. Specialize in high-impact data
+                visualization and automated reporting to streamline business
+                analysis and support executive-level strategy.
               </p>
               <TechStackTags tags={labelsDataEng} />
             </div>

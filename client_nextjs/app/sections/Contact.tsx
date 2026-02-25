@@ -1,12 +1,9 @@
 
-import { RiMailSendFill } from 'react-icons/ri';
+import { RiMailSendFill, RiMessage2Line } from 'react-icons/ri';
 
 function Contact() {
   return (
-    <section
-      id='contact'
-      className='relative py-24 lg:py-32 overflow-hidden'
-    >
+    <section id='contact' className='relative py-24 lg:py-32 overflow-hidden'>
       {/* Background Accent - Subtle */}
       <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-sky-500/5 rounded-full blur-3xl' />
 
@@ -28,11 +25,24 @@ function Contact() {
             </h4>
           </div>
 
-          <div className='flex justify-center'>
+          <div className='flex justify-center gap-2 md:gap-3'>
+            <a
+              href='https://wa.me/12263488310?text=Hello%20Toni'
+              rel='noreferrer'
+            >
+              <button className='btn-glass group flex items-center gap-1 md:gap-2 lg:gap-3 px-3 md:px-6'>
+                <RiMessage2Line className='text-base md:text-xl lg:text-2xl text-sky-400 group-hover:text-sky-500 transition-colors' />
+                <span className='tracking-normal sm:tracking-tighter md:tracking-wide text-base md:text-lg uppercase min-w-[100px]'>
+                  Talk to me
+                </span>
+              </button>
+            </a>
             <a href='mailto:tonidevvn@gmail.com' rel='noreferrer'>
-              <button className='btn-glass group flex items-center gap-3'>
-                <RiMailSendFill className='text-2xl text-sky-400 group-hover:text-sky-500 transition-colors' />
-                <span className='tracking-wide uppercase'>Contact Me</span>
+              <button className='btn-glass group flex items-center gap-1 md:gap-2 lg:gap-3 px-3 md:px-6'>
+                <RiMailSendFill className='text-base md:text-xl lg:text-2xl text-sky-400 group-hover:text-sky-500 transition-colors' />
+                <span className='tracking-normal sm:tracking-tighter md:tracking-wide text-base md:text-lg uppercase min-w-[100px]'>
+                  Contact me
+                </span>
               </button>
             </a>
           </div>

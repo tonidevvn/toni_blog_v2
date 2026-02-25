@@ -9,19 +9,19 @@ function Footer() {
                 href='https://github.com/tonidevvn'
                 target='_blank'
                 rel='noreferrer'
-                className='text-2xl text-slate-400 hover:text-sky-400 transition-all duration-300 hover:scale-110 glow-accent'
+                className='text-slate-600 dark:text-slate-400 hover:text-sky-400 transition-all duration-300 hover:scale-110 glow-accent rounded-2xl p-1'
                 aria-label='GitHub Profile'
               >
-                <FaGithub />
+                <FaGithub className="size-6" />
               </a>
               <a
                 href='https://www.linkedin.com/in/tonipham/'
                 target='_blank'
                 rel='noreferrer'
-                className='text-2xl text-slate-400 hover:text-sky-400 transition-all duration-300 hover:scale-110 glow-accent'
+                className='text-slate-600 dark:text-slate-400 hover:text-sky-400 transition-all duration-300 hover:scale-110 glow-accent rounded-2xl p-1'
                 aria-label='LinkedIn Profile'
               >
-                <FaLinkedin />
+                <FaLinkedin className="size-6" />
               </a>
             </div>
 

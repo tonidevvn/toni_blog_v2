@@ -11,7 +11,7 @@ import {
   Footer,
   Hero,
   Navigation,
-  Project,
+  Projects,
   Timeline,
 } from './sections';
 
@@ -54,7 +54,7 @@ function Page() {
         <Education />
         <Expertise />
         <Timeline />
-        <Project />
+        <Projects />
         <Contact />
       </FadeIn>
       <ScrollTop />

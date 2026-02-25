@@ -38,8 +38,9 @@ const projects = [
       'NextJs',
       'Spring Boot',
       'Web Crawling',
-      'CSS',
+      'Python',
       'Selenium',
+      'SQL',
       'MySQL',
     ],
     repoLink: 'https://github.com/tonidevvn/food-price-tracker',
@@ -75,6 +76,7 @@ const projects = [
       'CSS',
       'MongoDB',
       'Docker',
+      'Python',
       'Web Crawling',
       'Redis',
     ],
@@ -96,7 +98,7 @@ const projects = [
 import { useState } from 'react';
 import { BiChevronDown } from "react-icons/bi";
 
-function Project() {
+function Projects() {
   const [visibleProjects, setVisibleProjects] = useState(4);
   const totalProjects = projects.length;
 
@@ -138,4 +140,4 @@ function Project() {
   );
 }
 
-export default Project;
+export default Projects;

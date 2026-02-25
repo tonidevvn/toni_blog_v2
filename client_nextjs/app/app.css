@@ -6,7 +6,7 @@
    Modern UI/UX with Deep Navy Backgrounds & Sky Blue Glow Accents
 ================================================================ */
 /* -------------------------------------------------------
-                 CSS Custom Properties - Color Palette
+  CSS Custom Properties - Color Palette
 -------------------------------------------------------- */
 @layer base {
   :root {
@@ -19,15 +19,15 @@
     --light-shadow: rgba(15, 23, 42, 0.1);
 
     /* Light Mode Glassmorphism - Improved Visibility */
-      --light-glass-bg: rgba(255, 255, 255, 0.85);
-      --light-glass-border: rgba(59, 187, 231, 0.3);
-      --light-glass-shadow: rgba(59, 187, 231, 0.2);
+    --light-glass-bg: rgba(255, 255, 255, 0.65);
+    --light-glass-border: rgba(59, 187, 231, 0.3);
+    --light-glass-shadow: rgba(59, 187, 231, 0.2);
 
     /* Light Mode Glow Effects - Subtle & Professional */
-      --light-glow-sm: 0 0 6px rgba(59, 187, 231, 0.15);
-      --light-glow-md: 0 0 12px rgba(59, 187, 231, 0.2);
-      --light-glow-lg: 0 0 20px rgba(59, 187, 231, 0.25);
-      --light-glow-xl: 0 0 30px rgba(59, 187, 231, 0.3);
+    --light-glow-sm: 0 0 6px rgba(59, 187, 231, 0.15);
+    --light-glow-md: 0 0 12px rgba(59, 187, 231, 0.2);
+    --light-glow-lg: 0 0 20px rgba(59, 187, 231, 0.25);
+    --light-glow-xl: 0 0 30px rgba(59, 187, 231, 0.3);
 
     /* Sky Blue Accents (shared) */
     --sky-blue: #3bbbe7;
@@ -73,14 +73,14 @@
   body {
     margin: 0;
     font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", sans-serif;
-      font-size: 1.125rem;
-      /* Pro Max: Increased from 1.1rem for premium readability */
-      line-height: 1.7;
+    font-size: 1.125rem;
+    /* Pro Max: Increased from 1.1rem for premium readability */
+    line-height: 1.7;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 
     /* Light Mode Background - Softer Gradient */
-      background: linear-gradient(135deg, #f8fafc 0%, #f0f9ff 50%, #f8fafc 100%);
+    background: linear-gradient(135deg, #f8fafc 0%, #f0f9ff 50%, #f8fafc 100%);
     background-attachment: fixed;
     color: var(--light-text);
   }
@@ -108,16 +108,17 @@
 
   p,
   a,
-        label,
-        button {
-          font-family: var(--font-inter), sans-serif;
-        }
+  label,
+  button {
+    font-family: var(--font-inter), sans-serif;
+  }
+
   h1,
   h2,
   h3,
   h4,
-        h5 {
-          font-family: var(--font-outfit), sans-serif;
+  h5 {
+    font-family: var(--font-outfit), sans-serif;
   }
 
   h1,
@@ -125,34 +126,34 @@
   h3 {
     font-weight: 700;
     letter-spacing: -0.025em;
-      /* Tighter letter spacing for modern headings */
-      line-height: 1.2;
-    }
-    
+    /* Tighter letter spacing for modern headings */
+    line-height: 1.2;
+  }
+
+  h1 {
+    font-size: 3.5rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  h3 {
+    font-size: 2rem;
+  }
+
+  @media (max-width: 768px) {
     h1 {
-      font-size: 3.5rem;
-    }
-    
-    h2 {
       font-size: 2.5rem;
     }
-    
-    h3 {
+
+    h2 {
       font-size: 2rem;
     }
-    
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 2.5rem;
-      }
-    
-      h2 {
-        font-size: 2rem;
-      }
-    
-      h3 {
-        font-size: 1.75rem;
-      }
+
+    h3 {
+      font-size: 1.75rem;
+    }
   }
 }
 
@@ -166,13 +167,13 @@
     /* Light mode by default - Enhanced Visibility */
     background: var(--light-glass-bg);
     backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     border: 1px solid var(--light-glass-border);
     border-radius: 20px;
     box-shadow:
       0 8px 32px 0 var(--light-shadow),
       inset 0 1px 1px 0 rgba(255, 255, 255, 0.6);
-        transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .dark .glass-card {
@@ -398,7 +399,7 @@
   .navigation-bar-responsive span,
   .navigation-bar-responsive p {
     @apply text-[#0d1116];
-    font-family: var(--font-inter), sans-serif;
+    font-family: var(--font-montserrat), sans-serif;
   }
 
   /* Nav Link with Glow Underline */
@@ -443,7 +444,7 @@
     animation: fadeIn 0.8s ease-out both;
   }
 
-    /* Scale & Lift - Minimalist (No Layout Shift) */
+  /* Scale & Lift - Minimalist (No Layout Shift) */
   .hover-lift {
     transition: transform 0.25s ease, box-shadow 0.25s ease;
   }
@@ -591,14 +592,37 @@
 /* Wave Animation */
 /* Wave Animation */
 @keyframes wave {
-  0% { transform: rotate(0.0deg) }
-  10% { transform: rotate(14.0deg) }
-  20% { transform: rotate(-8.0deg) }
-  30% { transform: rotate(14.0deg) }
-  40% { transform: rotate(-4.0deg) }
-  50% { transform: rotate(10.0deg) }
-  60% { transform: rotate(0.0deg) }
-  100% { transform: rotate(0.0deg) }
+  0% {
+    transform: rotate(0.0deg)
+  }
+
+  10% {
+    transform: rotate(14.0deg)
+  }
+
+  20% {
+    transform: rotate(-8.0deg)
+  }
+
+  30% {
+    transform: rotate(14.0deg)
+  }
+
+  40% {
+    transform: rotate(-4.0deg)
+  }
+
+  50% {
+    transform: rotate(10.0deg)
+  }
+
+  60% {
+    transform: rotate(0.0deg)
+  }
+
+  100% {
+    transform: rotate(0.0deg)
+  }
 }
 
 /* -------------------------------------------------------
@@ -608,13 +632,13 @@
   .glass-card {
     border-radius: 16px;
     backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  /* Reduce animations on mobile for performance */
+  @media (prefers-reduced-motion: no-preference) {
+    .hover-lift:hover {
+      transform: translateY(-2px);
     }
-    
-    /* Reduce animations on mobile for performance */
-    @media (prefers-reduced-motion: no-preference) {
-      .hover-lift:hover {
-        transform: translateY(-2px);
-      }
   }
 }

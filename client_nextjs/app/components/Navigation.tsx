@@ -136,7 +136,7 @@ export default function Navigation({ mode, modeChange }: NavigationProps) {
                     scrollToSection(id);
                     setMobileOpen(false);
                   }}
-                  className='cursor-pointer w-full text-left px-4 py-3 text-slate-900 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors duration-200 font-medium text-base flex items-center gap-3'
+                  className='cursor-pointer w-[calc(100%-16px)] text-left px-4 py-3 text-slate-900 dark:text-white hover:bg-slate-100/80 dark:hover:bg-slate-800/80 font-medium text-base flex items-center gap-3 mx-2 rounded-xl'
                 >
                   <FaTerminal /> {label}
                 </button>
