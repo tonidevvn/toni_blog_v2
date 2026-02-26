@@ -47,10 +47,10 @@ const TIMELINE_ITEMS: TimelineItem[] = [
     id: 'uno-fs-2022',
     date: 'Jul 2022 - Apr 2024',
     title:
-      'Full-Stack Developer, Continuous Improvement Specialist, Client Support at UNO Media',
+      'Continuous Improvement Specialist, Full-Stack Developer at UNO Media',
     subtitle: 'Ho Chi Minh, Vietnam',
     description:
-      'Frontend Development, Backend Development, User Experience, Automation, Data Governance, Statistical Analysis',
+      'Dashboard Development, Web/App Development, Automation & Workflow Optimization, Data Governance, Statistical Analysis, Client Support',
     icon: 'work',
   },
   {

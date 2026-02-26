@@ -41,7 +41,7 @@ export default function Navigation({ mode, modeChange }: NavigationProps) {
   }, [width]);
 
   const iconBtn =
-    'md:hidden inline-flex items-center justify-center h-10 w-10 rounded-md ' +
+    'cursor-pointer md:hidden inline-flex items-center justify-center p-2 rounded-md ' +
     'text-slate-700 hover:bg-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 ' +
     'dark:text-slate-200 dark:hover:bg-slate-800 transition';
 

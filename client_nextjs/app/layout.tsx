@@ -1,22 +1,22 @@
-import type { Metadata } from "next";
+import type { Metadata } from 'next';
 import { Inter, Outfit } from 'next/font/google'; // Premium Google Fonts
-import "./app.css";
+import './app.css';
 
 const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
+  variable: '--font-inter',
+  subsets: ['latin'],
   display: 'swap',
 });
 
 const outfit = Outfit({
-  variable: "--font-outfit",
-  subsets: ["latin"],
+  variable: '--font-outfit',
+  subsets: ['latin'],
   display: 'swap',
 });
 
 export const metadata: Metadata = {
-  title: "Toni | Fullstack Developer",
-  description: "Portfolio of Toni, a Fullstack Developer.",
+  title: 'Toni | Fullstack Developer',
+  description: 'Portfolio of Toni, a Fullstack Developer.',
 };
 
 export default function RootLayout({

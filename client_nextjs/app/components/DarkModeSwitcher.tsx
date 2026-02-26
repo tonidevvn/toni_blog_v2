@@ -19,7 +19,7 @@ export default function DarkModeSwitcher({
       onClick={onToggle}
       aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
       className={[
-        'inline-flex items-center justify-center rounded-md p-2',
+        'cursor-pointer inline-flex items-center justify-center rounded-md p-2',
         'text-slate-700 hover:bg-slate-100',
         'dark:text-slate-200 dark:hover:bg-slate-800',
         'transition-colors duration-200',
